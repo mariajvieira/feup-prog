@@ -9,6 +9,42 @@ using namespace tinyxml2;
 
 namespace svg
 {
+
+
+    void applyTransformation(SVGElement* element, const string& transform_attr, Point& transform_origin)
+    {
+        istringstream iss(transform_attr);
+        string transform_type;
+        char p1 = '(';
+        string p;
+        char p2 = ')';
+
+        iss >> transform_type >> p1 >> p >> p2;
+
+        if (transform_type == "rotate")
+        {
+            int angle = stoi(p);
+            element->rotate(angle, transform_origin);
+        }
+        else if (transform_type == "scale")
+        {
+            int scale = stoi(p);
+            element->scale(scale, transform_origin);
+        }
+        else if (transform_type == "translate")
+        {
+            istringstream iss(p);
+            string sp = " ";
+            int i1;
+            int i2;
+            iss >> i1 >> sp >> i2;
+            Point t_point{i1, i2};
+            element->translate(t_point);
+        }
+    }
+
+
+
     void readSVG(const string& svg_file, Point& dimensions, vector<SVGElement *>& svg_elements)
     {
         XMLDocument doc;
@@ -29,24 +65,33 @@ namespace svg
         {
             const char* element_name = child->Name();
             
-
             string transform_attr;
             string transform_origin_attr;
             Point transform_origin{0, 0}; // Default transformation origin
-            
+            bool istransform=false;
+
+
+            // read transform attribute
             for (const XMLAttribute* attr = child->FirstAttribute(); attr != nullptr; attr = attr->Next())
             {
                 if (strcmp(attr->Name(), "transform") == 0) {
                     transform_attr = attr->Value();
+                    istransform=true;
+                    
                 }
                 else if (strcmp(attr->Name(), "transform-origin") == 0)
                 {
                     transform_origin_attr = attr->Value();
                     istringstream iss(transform_origin_attr);
-                    iss >> transform_origin.x >> transform_origin.y;
+                    int x;
+                    int y;
+                    string sp = " ";
+                    iss >> x >> sp >> y;
+                    transform_origin.x=x;
+                    transform_origin.y=y;
                 }
             }
-
+        
 
             if (strcmp(element_name, "ellipse") == 0)
             {
@@ -55,8 +100,14 @@ namespace svg
                 int rx = child->IntAttribute("rx");
                 int ry = child->IntAttribute("ry");
                 string fill_color = child->Attribute("fill");
+
+                Ellipse* e= new Ellipse(parse_color(fill_color), {cx, cy}, {rx, ry});
                 
-                shapes.push_back(new Ellipse(parse_color(fill_color), {cx, cy}, {rx, ry}));
+                if (istransform) {
+                    applyTransformation(e, transform_attr, transform_origin);
+                }
+
+                shapes.push_back(e);
             }
 
             else if (strcmp(element_name, "circle") == 0)
@@ -66,7 +117,13 @@ namespace svg
                 int r = child->IntAttribute("r");
                 string fill_color = child->Attribute("fill");
                 
-                shapes.push_back(new Circle(parse_color(fill_color), {cx, cy}, r));
+                Circle* e= new Circle(parse_color(fill_color), {cx, cy}, r);
+
+                if (istransform) {
+                    applyTransformation(e, transform_attr, transform_origin);
+                }
+
+                shapes.push_back(e);
             }
 
             else if (strcmp(element_name, "polyline") == 0)
@@ -87,8 +144,14 @@ namespace svg
                         points_vec.push_back({x,y});
                     }
                 }
-                
-                shapes.push_back(new Polyline(points_vec, parse_color(stroke_color)));
+
+                Polyline* e= new Polyline(points_vec, parse_color(stroke_color));
+
+                if (istransform) {
+                    applyTransformation(e, transform_attr, transform_origin);
+                }
+
+                shapes.push_back(e);
             }
 
             else if (strcmp(element_name, "line") == 0)
@@ -99,7 +162,13 @@ namespace svg
                 int y2 = child->IntAttribute("y2");
                 string stroke_color = child->Attribute("stroke");
                 
-                shapes.push_back(new Line(x1,y1,x2,y2,parse_color(stroke_color)));
+                Line* e= new Line(x1,y1,x2,y2,parse_color(stroke_color));
+
+                if (istransform) {
+                    applyTransformation(e, transform_attr, transform_origin);
+                }
+
+                shapes.push_back(e);
             }
 
             else if (strcmp(element_name, "polygon") == 0)
@@ -121,7 +190,13 @@ namespace svg
                     }
                 }
 
-                shapes.push_back(new Polygon(points_vec,parse_color(fill_color)));
+                Polygon* e= new Polygon(points_vec,parse_color(fill_color));
+
+                if (istransform) {
+                    applyTransformation(e, transform_attr, transform_origin);
+                }
+
+                shapes.push_back(e);
             }
 
             else if (strcmp(element_name, "rect") == 0)
@@ -132,11 +207,22 @@ namespace svg
                 int width = child->IntAttribute("width");
                 int height = child->IntAttribute("height");
                 
-                
-                shapes.push_back(new Rect(x, y, parse_color(fill_color), width, height ));
+                Rect* e= new Rect(x, y, parse_color(fill_color), width, height );
+
+                if (istransform) {
+                    applyTransformation(e, transform_attr, transform_origin);
+                }
+
+                shapes.push_back(e);
             } 
             
         }
+
         svg_elements=shapes;
     }
+
+
+
+
+
 }

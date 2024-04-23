@@ -1,6 +1,6 @@
 //! @file shape.hpp
-#ifndef __svg_SVGElements_hpp__
-#define __svg_SVGElements_hpp__
+#ifndef _svg_SVGElements_hpp_
+#define _svg_SVGElements_hpp_
 
 #include <vector>
 using namespace std;
@@ -17,7 +17,9 @@ namespace svg
         SVGElement();
         virtual ~SVGElement();
         virtual void draw(PNGImage &img) const = 0;
-        
+        virtual void translate(const Point &t) = 0;
+        virtual void rotate(int degrees,Point &t) = 0;
+        virtual void scale(int v, Point &t) = 0;
     };
 
     // Declaration of namespace functions
@@ -37,9 +39,9 @@ namespace svg
     public:
         Ellipse(const Color &fill, const Point &center, const Point &radius);
         void draw(PNGImage &img) const override;
-        virtual void translate(const Point &t);
-        virtual void rotate(int degrees);
-        virtual void scale(int v);
+        void translate(const Point &t) override;
+        void rotate(int degrees,Point &t) override;
+        void scale(int v,Point &t) override;
 
     private:
         Color fill;
@@ -53,7 +55,7 @@ namespace svg
     {
     public:
         Circle(const Color &fill, const Point &center, const int &radius);
-        void draw(PNGImage &img) const;
+        void draw(PNGImage &img) const override;
     };
 
 
@@ -61,10 +63,10 @@ namespace svg
     {
     public:
         Polyline(const std::vector<Point>& _points, Color _stroke);
-        void draw(PNGImage& img) const;
-        virtual void translate(const Point &t);
-        virtual void rotate(int degrees);
-        virtual void scale(int v);
+        void draw(PNGImage& img) const override;
+        void translate(const Point &t) override;
+        void rotate(int degrees, Point &t) override;
+        void scale(int v,Point &t) override;
 
     private:
         std::vector<Point> points; 
@@ -80,17 +82,18 @@ namespace svg
 
     class Polygon : public SVGElement 
     {
-    private:
-        std::vector<Point> points;
-        Color fill; 
 
     public:
         Polygon(const std::vector<Point>& _points, Color _fill);
         void draw(PNGImage& img) const override;
-        virtual void translate(const Point &t);
-        virtual void rotate(int degrees);
-        virtual void scale(int v);
+        void translate(const Point &t) override;
+        void rotate(int degrees,Point &t) override;
+        void scale(int v,Point &t) override;
 
+
+    private:
+        std::vector<Point> points;
+        Color fill; 
     };
 
     class Rect : public Polygon 

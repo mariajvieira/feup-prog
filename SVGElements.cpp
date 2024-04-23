@@ -19,12 +19,12 @@ namespace svg
         center = center.translate(t);
     }
 
-    void Ellipse::rotate(int degrees){
-        center = center.rotate({0, 0}, degrees);
+    void Ellipse::rotate(int degrees,Point &t){
+        center = center.rotate(t, degrees);
     }
 
-    void Ellipse::scale(int v) {
-        radius = radius.scale(center, v);
+    void Ellipse::scale(int v,Point &t) {
+        radius = radius.scale(t, v);
     }
 
 
@@ -50,15 +50,15 @@ namespace svg
         }
     }
 
-    void Polyline::rotate(int degrees) {
+    void Polyline::rotate(int degrees,Point &t) {
         for (auto &point : points) {
-            point = point.rotate({0, 0}, degrees);
+            point = point.rotate(t, degrees);
         }
     }
 
-    void Polyline::scale(int v) {
+    void Polyline::scale(int v,Point &t) {
         for (auto &point : points) {
-            point = point.scale({0, 0}, v);
+            point = point.scale(t, v);
         }
     }
 
@@ -81,15 +81,15 @@ namespace svg
         }
     }
 
-    void Polygon::rotate(int degrees) {
+    void Polygon::rotate(int degrees,Point &t) {
         for (auto &point : points) {
-            point = point.rotate({0, 0}, degrees);
+            point = point.rotate(t, degrees);
         }
     }
 
-    void Polygon::scale(int v) {
+    void Polygon::scale(int v,Point &t) {
         for (auto &point : points) {
-            point = point.scale({0, 0}, v);
+            point = point.scale(t, v);
         }
     }
 
