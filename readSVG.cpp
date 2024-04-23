@@ -190,7 +190,7 @@ namespace svg
                     }
                 }
 
-                Polygon* e= new Polygon(points_vec,parse_color(fill_color));
+                Polygon* e = new Polygon(points_vec,parse_color(fill_color));
 
                 if (istransform) {
                     applyTransformation(e, transform_attr, transform_origin);
@@ -214,15 +214,10 @@ namespace svg
                 }
 
                 shapes.push_back(e);
-            } 
-            
+            }
         }
-
         svg_elements=shapes;
+        //svg_elements.insert(svg_elements.end(), shapes.begin(), shapes.end());
     }
-
-
-
-
 
 }

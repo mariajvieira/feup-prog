@@ -97,5 +97,5 @@ namespace svg
     
     // Rect
     Rect::Rect(int _x, int _y, Color _fill, int _width, int _height) 
-       : Polygon({{_x,_y}, {_x+_width, _y}, {_x+_width, _y+_height}, {_x, _y+_height}},_fill) {}
+       : Polygon({{_x,_y}, {_x+_width-1, _y}, {_x+_width-1, _y+_height-1}, {_x, _y+_height-1}},_fill) {}
 }
