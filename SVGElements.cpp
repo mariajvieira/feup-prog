@@ -5,6 +5,7 @@ namespace svg
     // These must be defined!
     SVGElement::SVGElement() {}
     SVGElement::~SVGElement() {}
+    
 
     // Ellipse (initial code provided)
     Ellipse::Ellipse(const Color &fill,
@@ -23,8 +24,12 @@ namespace svg
         center = center.rotate(t, degrees);
     }
 
+
+//FALTA ESTA
     void Ellipse::scale(int v,Point &t) {
-        radius = radius.scale(t, v);
+        center = center.scale(t, v);
+        radius = radius.scale(t,v);
+        
     }
 
 
@@ -88,7 +93,7 @@ namespace svg
     }
 
     void Polygon::scale(int v,Point &t) {
-        for (auto &point : points) {
+        for (Point &point : points) {
             point = point.scale(t, v);
         }
     }

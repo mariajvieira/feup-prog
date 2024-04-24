@@ -34,6 +34,37 @@ namespace svg
 
 
 
+    class Group : public SVGElement {
+    public:
+
+        vector<SVGElement*> getElements() {return elements;}
+        void draw(PNGImage &img) const override {
+            for (SVGElement* e: elements) {
+                e->draw(img);
+            }
+        }
+        void translate(const Point &t) override {
+            for (SVGElement* e: elements) {
+                e->translate(t);
+            }
+        }
+        void rotate(int degrees,Point &t) override {
+            for (SVGElement* e: elements) {
+                e->rotate(degrees, t);
+            }
+        }
+        void scale(int v,Point &t) override {
+            for (SVGElement* e: elements) {
+                e->scale(v,t);
+            }
+        }
+
+    private:
+        vector<SVGElement*> elements;
+    };
+
+
+
     class Ellipse : public SVGElement
     {
     public:
