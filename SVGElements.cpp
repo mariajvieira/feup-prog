@@ -7,6 +7,35 @@ namespace svg
     SVGElement::~SVGElement() {}
     
 
+    Group::Group(vector<SVGElement*> elements): elements(elements) {}
+
+    void Group::addElement(SVGElement* e) {
+            elements.push_back(e);
+    }
+    vector<SVGElement*> Group::getElements() {
+        return elements;
+    }
+    void Group::draw(PNGImage &img) const {
+        for (SVGElement* e: elements) {
+            e->draw(img);
+        }
+    }
+    void Group::translate(const Point &t) {
+        for (SVGElement* e: elements) {
+            e->translate(t);
+        }
+    }
+    void Group::rotate(int degrees,Point &t) {
+        for (SVGElement* e: elements) {
+            e->rotate(degrees, t);
+        }
+    }
+    void Group::scale(int v,Point &t) {
+        for (SVGElement* e: elements) {
+            e->scale(v,t);
+        }
+    }
+
     // Ellipse (initial code provided)
     Ellipse::Ellipse(const Color &fill,
                      const Point &center,

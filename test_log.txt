@@ -7,19 +7,596 @@
 >>>> [7] ellipse_1 <<<<
 >>>> [8] ellipse_2 <<<<
 >>>> [9] group_1 <<<<
-pixel (10 40): expected 255 0 0 got 255 255 255
+
+=================================================================
+==17636==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 32 byte(s) in 1 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54ae24d in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:82
+    #2 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #3 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #4 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #5 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #6 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #7 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #8 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 64 byte(s) in 2 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54af4d1 in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:115
+    #2 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #3 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #4 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #5 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #6 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #7 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #8 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #9 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 16 byte(s) in 1 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54a9f96 in __gnu_cxx::new_allocator<svg::SVGElement*>::allocate(unsigned long, void const*) /usr/include/c++/11/ext/new_allocator.h:127
+    #2 0x5d92d54a92fc in std::allocator_traits<std::allocator<svg::SVGElement*> >::allocate(std::allocator<svg::SVGElement*>&, unsigned long) /usr/include/c++/11/bits/alloc_traits.h:464
+    #3 0x5d92d54a8631 in std::_Vector_base<svg::SVGElement*, std::allocator<svg::SVGElement*> >::_M_allocate(unsigned long) /usr/include/c++/11/bits/stl_vector.h:346
+    #4 0x5d92d54a7c1f in std::_Vector_base<svg::SVGElement*, std::allocator<svg::SVGElement*> >::_M_create_storage(unsigned long) /usr/include/c++/11/bits/stl_vector.h:361
+    #5 0x5d92d54a5a0c in std::_Vector_base<svg::SVGElement*, std::allocator<svg::SVGElement*> >::_Vector_base(unsigned long, std::allocator<svg::SVGElement*> const&) /usr/include/c++/11/bits/stl_vector.h:305
+    #6 0x5d92d54a39ca in std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >::vector(std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> > const&) /usr/include/c++/11/bits/stl_vector.h:555
+    #7 0x5d92d549bad0 in svg::Group::Group(std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >) /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:10
+    #8 0x5d92d54ae280 in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:82
+    #9 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #10 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #11 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #12 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #13 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #14 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #15 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+SUMMARY: AddressSanitizer: 112 byte(s) leaked in 4 allocation(s).
 >>>> [10] group_2 <<<<
-pixel (0 25): expected 255 0 0 got 255 255 255
+
+=================================================================
+==17638==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 32 byte(s) in 1 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54ae24d in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:82
+    #2 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #3 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #4 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #5 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #6 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #7 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #8 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 64 byte(s) in 2 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54af4d1 in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:115
+    #2 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #3 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #4 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #5 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #6 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #7 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #8 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #9 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 16 byte(s) in 1 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54a9f96 in __gnu_cxx::new_allocator<svg::SVGElement*>::allocate(unsigned long, void const*) /usr/include/c++/11/ext/new_allocator.h:127
+    #2 0x5d92d54a92fc in std::allocator_traits<std::allocator<svg::SVGElement*> >::allocate(std::allocator<svg::SVGElement*>&, unsigned long) /usr/include/c++/11/bits/alloc_traits.h:464
+    #3 0x5d92d54a8631 in std::_Vector_base<svg::SVGElement*, std::allocator<svg::SVGElement*> >::_M_allocate(unsigned long) /usr/include/c++/11/bits/stl_vector.h:346
+    #4 0x5d92d54a7c1f in std::_Vector_base<svg::SVGElement*, std::allocator<svg::SVGElement*> >::_M_create_storage(unsigned long) /usr/include/c++/11/bits/stl_vector.h:361
+    #5 0x5d92d54a5a0c in std::_Vector_base<svg::SVGElement*, std::allocator<svg::SVGElement*> >::_Vector_base(unsigned long, std::allocator<svg::SVGElement*> const&) /usr/include/c++/11/bits/stl_vector.h:305
+    #6 0x5d92d54a39ca in std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >::vector(std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> > const&) /usr/include/c++/11/bits/stl_vector.h:555
+    #7 0x5d92d549bad0 in svg::Group::Group(std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >) /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:10
+    #8 0x5d92d54ae280 in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:82
+    #9 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #10 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #11 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #12 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #13 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #14 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #15 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+SUMMARY: AddressSanitizer: 112 byte(s) leaked in 4 allocation(s).
 >>>> [11] group_3 <<<<
-pixel (10 260): expected 255 0 0 got 255 255 255
+
+=================================================================
+==17640==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 32 byte(s) in 1 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54ae24d in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:82
+    #2 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #3 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #4 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #5 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #6 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #7 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #8 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 128 byte(s) in 4 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54af4d1 in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:115
+    #2 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #3 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #4 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #5 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #6 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #7 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #8 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #9 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 80 byte(s) in 1 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54aa556 in __gnu_cxx::new_allocator<svg::Point>::allocate(unsigned long, void const*) /usr/include/c++/11/ext/new_allocator.h:127
+    #2 0x5d92d54a9b6d in std::allocator_traits<std::allocator<svg::Point> >::allocate(std::allocator<svg::Point>&, unsigned long) /usr/include/c++/11/bits/alloc_traits.h:464
+    #3 0x5d92d54a9051 in std::_Vector_base<svg::Point, std::allocator<svg::Point> >::_M_allocate(unsigned long) /usr/include/c++/11/bits/stl_vector.h:346
+    #4 0x5d92d54a88c9 in std::_Vector_base<svg::Point, std::allocator<svg::Point> >::_M_create_storage(unsigned long) (/home/mariajvieira/Desktop/prog/project/test+0x1c28c9)
+    #5 0x5d92d54a6f78 in std::_Vector_base<svg::Point, std::allocator<svg::Point> >::_Vector_base(unsigned long, std::allocator<svg::Point> const&) (/home/mariajvieira/Desktop/prog/project/test+0x1c0f78)
+    #6 0x5d92d54a4916 in std::vector<svg::Point, std::allocator<svg::Point> >::vector(std::vector<svg::Point, std::allocator<svg::Point> > const&) /usr/include/c++/11/bits/stl_vector.h:555
+    #7 0x5d92d54a142d in svg::Polygon::Polygon(std::vector<svg::Point, std::allocator<svg::Point> > const&, svg::Color) /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:106
+    #8 0x5d92d54b2187 in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:188
+    #9 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #10 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #11 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #12 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #13 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #14 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #15 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #16 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 40 byte(s) in 1 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54a9f96 in __gnu_cxx::new_allocator<svg::SVGElement*>::allocate(unsigned long, void const*) /usr/include/c++/11/ext/new_allocator.h:127
+    #2 0x5d92d54a92fc in std::allocator_traits<std::allocator<svg::SVGElement*> >::allocate(std::allocator<svg::SVGElement*>&, unsigned long) /usr/include/c++/11/bits/alloc_traits.h:464
+    #3 0x5d92d54a8631 in std::_Vector_base<svg::SVGElement*, std::allocator<svg::SVGElement*> >::_M_allocate(unsigned long) /usr/include/c++/11/bits/stl_vector.h:346
+    #4 0x5d92d54a7c1f in std::_Vector_base<svg::SVGElement*, std::allocator<svg::SVGElement*> >::_M_create_storage(unsigned long) /usr/include/c++/11/bits/stl_vector.h:361
+    #5 0x5d92d54a5a0c in std::_Vector_base<svg::SVGElement*, std::allocator<svg::SVGElement*> >::_Vector_base(unsigned long, std::allocator<svg::SVGElement*> const&) /usr/include/c++/11/bits/stl_vector.h:305
+    #6 0x5d92d54a39ca in std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >::vector(std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> > const&) /usr/include/c++/11/bits/stl_vector.h:555
+    #7 0x5d92d549bad0 in svg::Group::Group(std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >) /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:10
+    #8 0x5d92d54ae280 in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:82
+    #9 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #10 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #11 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #12 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #13 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #14 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #15 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 40 byte(s) in 1 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54b20df in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:188
+    #2 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #3 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #4 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #5 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #6 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #7 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #8 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #9 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+SUMMARY: AddressSanitizer: 320 byte(s) leaked in 8 allocation(s).
 >>>> [12] group_4 <<<<
-pixel (10 260): expected 255 0 0 got 255 255 255
+
+=================================================================
+==17653==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 32 byte(s) in 1 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54ae24d in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:82
+    #2 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #3 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #4 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #5 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #6 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #7 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #8 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 128 byte(s) in 4 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54af4d1 in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:115
+    #2 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #3 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #4 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #5 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #6 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #7 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #8 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #9 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #10 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 80 byte(s) in 1 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54aa556 in __gnu_cxx::new_allocator<svg::Point>::allocate(unsigned long, void const*) /usr/include/c++/11/ext/new_allocator.h:127
+    #2 0x5d92d54a9b6d in std::allocator_traits<std::allocator<svg::Point> >::allocate(std::allocator<svg::Point>&, unsigned long) /usr/include/c++/11/bits/alloc_traits.h:464
+    #3 0x5d92d54a9051 in std::_Vector_base<svg::Point, std::allocator<svg::Point> >::_M_allocate(unsigned long) /usr/include/c++/11/bits/stl_vector.h:346
+    #4 0x5d92d54a88c9 in std::_Vector_base<svg::Point, std::allocator<svg::Point> >::_M_create_storage(unsigned long) (/home/mariajvieira/Desktop/prog/project/test+0x1c28c9)
+    #5 0x5d92d54a6f78 in std::_Vector_base<svg::Point, std::allocator<svg::Point> >::_Vector_base(unsigned long, std::allocator<svg::Point> const&) (/home/mariajvieira/Desktop/prog/project/test+0x1c0f78)
+    #6 0x5d92d54a4916 in std::vector<svg::Point, std::allocator<svg::Point> >::vector(std::vector<svg::Point, std::allocator<svg::Point> > const&) /usr/include/c++/11/bits/stl_vector.h:555
+    #7 0x5d92d54a142d in svg::Polygon::Polygon(std::vector<svg::Point, std::allocator<svg::Point> > const&, svg::Color) /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:106
+    #8 0x5d92d54b2187 in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:188
+    #9 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #10 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #11 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #12 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #13 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #14 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #15 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #16 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 40 byte(s) in 1 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54b20df in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:188
+    #2 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #3 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #4 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #5 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #6 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #7 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #8 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #9 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 32 byte(s) in 1 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54ae24d in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:82
+    #2 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #3 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #4 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #5 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #6 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #7 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #8 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #9 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 32 byte(s) in 1 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54a9f96 in __gnu_cxx::new_allocator<svg::SVGElement*>::allocate(unsigned long, void const*) /usr/include/c++/11/ext/new_allocator.h:127
+    #2 0x5d92d54a92fc in std::allocator_traits<std::allocator<svg::SVGElement*> >::allocate(std::allocator<svg::SVGElement*>&, unsigned long) /usr/include/c++/11/bits/alloc_traits.h:464
+    #3 0x5d92d54a8631 in std::_Vector_base<svg::SVGElement*, std::allocator<svg::SVGElement*> >::_M_allocate(unsigned long) /usr/include/c++/11/bits/stl_vector.h:346
+    #4 0x5d92d54a7c1f in std::_Vector_base<svg::SVGElement*, std::allocator<svg::SVGElement*> >::_M_create_storage(unsigned long) /usr/include/c++/11/bits/stl_vector.h:361
+    #5 0x5d92d54a5a0c in std::_Vector_base<svg::SVGElement*, std::allocator<svg::SVGElement*> >::_Vector_base(unsigned long, std::allocator<svg::SVGElement*> const&) /usr/include/c++/11/bits/stl_vector.h:305
+    #6 0x5d92d54a39ca in std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >::vector(std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> > const&) /usr/include/c++/11/bits/stl_vector.h:555
+    #7 0x5d92d549bad0 in svg::Group::Group(std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >) /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:10
+    #8 0x5d92d54ae280 in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:82
+    #9 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #10 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #11 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #12 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #13 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #14 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #15 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #16 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 16 byte(s) in 1 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54a9f96 in __gnu_cxx::new_allocator<svg::SVGElement*>::allocate(unsigned long, void const*) /usr/include/c++/11/ext/new_allocator.h:127
+    #2 0x5d92d54a92fc in std::allocator_traits<std::allocator<svg::SVGElement*> >::allocate(std::allocator<svg::SVGElement*>&, unsigned long) /usr/include/c++/11/bits/alloc_traits.h:464
+    #3 0x5d92d54a8631 in std::_Vector_base<svg::SVGElement*, std::allocator<svg::SVGElement*> >::_M_allocate(unsigned long) /usr/include/c++/11/bits/stl_vector.h:346
+    #4 0x5d92d54a7c1f in std::_Vector_base<svg::SVGElement*, std::allocator<svg::SVGElement*> >::_M_create_storage(unsigned long) /usr/include/c++/11/bits/stl_vector.h:361
+    #5 0x5d92d54a5a0c in std::_Vector_base<svg::SVGElement*, std::allocator<svg::SVGElement*> >::_Vector_base(unsigned long, std::allocator<svg::SVGElement*> const&) /usr/include/c++/11/bits/stl_vector.h:305
+    #6 0x5d92d54a39ca in std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >::vector(std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> > const&) /usr/include/c++/11/bits/stl_vector.h:555
+    #7 0x5d92d549bad0 in svg::Group::Group(std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >) /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:10
+    #8 0x5d92d54ae280 in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:82
+    #9 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #10 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #11 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #12 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #13 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #14 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #15 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+SUMMARY: AddressSanitizer: 360 byte(s) leaked in 10 allocation(s).
 >>>> [13] group_5 <<<<
-pixel (10 260): expected 255 0 0 got 255 255 255
+
+=================================================================
+==17655==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 32 byte(s) in 1 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54ae24d in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:82
+    #2 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #3 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #4 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #5 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #6 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #7 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #8 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 160 byte(s) in 2 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54aa556 in __gnu_cxx::new_allocator<svg::Point>::allocate(unsigned long, void const*) /usr/include/c++/11/ext/new_allocator.h:127
+    #2 0x5d92d54a9b6d in std::allocator_traits<std::allocator<svg::Point> >::allocate(std::allocator<svg::Point>&, unsigned long) /usr/include/c++/11/bits/alloc_traits.h:464
+    #3 0x5d92d54a9051 in std::_Vector_base<svg::Point, std::allocator<svg::Point> >::_M_allocate(unsigned long) /usr/include/c++/11/bits/stl_vector.h:346
+    #4 0x5d92d54a88c9 in std::_Vector_base<svg::Point, std::allocator<svg::Point> >::_M_create_storage(unsigned long) (/home/mariajvieira/Desktop/prog/project/test+0x1c28c9)
+    #5 0x5d92d54a6f78 in std::_Vector_base<svg::Point, std::allocator<svg::Point> >::_Vector_base(unsigned long, std::allocator<svg::Point> const&) (/home/mariajvieira/Desktop/prog/project/test+0x1c0f78)
+    #6 0x5d92d54a4916 in std::vector<svg::Point, std::allocator<svg::Point> >::vector(std::vector<svg::Point, std::allocator<svg::Point> > const&) /usr/include/c++/11/bits/stl_vector.h:555
+    #7 0x5d92d54a142d in svg::Polygon::Polygon(std::vector<svg::Point, std::allocator<svg::Point> > const&, svg::Color) /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:106
+    #8 0x5d92d54b2187 in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:188
+    #9 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #10 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #11 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #12 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #13 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #14 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #15 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #16 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #17 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 96 byte(s) in 3 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54ae24d in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:82
+    #2 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #3 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #4 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #5 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #6 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #7 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #8 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #9 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 96 byte(s) in 3 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54af4d1 in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:115
+    #2 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #3 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #4 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #5 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #6 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #7 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #8 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #9 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #10 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 80 byte(s) in 2 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54b20df in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:188
+    #2 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #3 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #4 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #5 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #6 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #7 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #8 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #9 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #10 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 40 byte(s) in 3 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54a9f96 in __gnu_cxx::new_allocator<svg::SVGElement*>::allocate(unsigned long, void const*) /usr/include/c++/11/ext/new_allocator.h:127
+    #2 0x5d92d54a92fc in std::allocator_traits<std::allocator<svg::SVGElement*> >::allocate(std::allocator<svg::SVGElement*>&, unsigned long) /usr/include/c++/11/bits/alloc_traits.h:464
+    #3 0x5d92d54a8631 in std::_Vector_base<svg::SVGElement*, std::allocator<svg::SVGElement*> >::_M_allocate(unsigned long) /usr/include/c++/11/bits/stl_vector.h:346
+    #4 0x5d92d54a7c1f in std::_Vector_base<svg::SVGElement*, std::allocator<svg::SVGElement*> >::_M_create_storage(unsigned long) /usr/include/c++/11/bits/stl_vector.h:361
+    #5 0x5d92d54a5a0c in std::_Vector_base<svg::SVGElement*, std::allocator<svg::SVGElement*> >::_Vector_base(unsigned long, std::allocator<svg::SVGElement*> const&) /usr/include/c++/11/bits/stl_vector.h:305
+    #6 0x5d92d54a39ca in std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >::vector(std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> > const&) /usr/include/c++/11/bits/stl_vector.h:555
+    #7 0x5d92d549bad0 in svg::Group::Group(std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >) /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:10
+    #8 0x5d92d54ae280 in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:82
+    #9 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #10 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #11 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #12 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #13 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #14 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #15 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #16 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 24 byte(s) in 1 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54a9f96 in __gnu_cxx::new_allocator<svg::SVGElement*>::allocate(unsigned long, void const*) /usr/include/c++/11/ext/new_allocator.h:127
+    #2 0x5d92d54a92fc in std::allocator_traits<std::allocator<svg::SVGElement*> >::allocate(std::allocator<svg::SVGElement*>&, unsigned long) /usr/include/c++/11/bits/alloc_traits.h:464
+    #3 0x5d92d54a8631 in std::_Vector_base<svg::SVGElement*, std::allocator<svg::SVGElement*> >::_M_allocate(unsigned long) /usr/include/c++/11/bits/stl_vector.h:346
+    #4 0x5d92d54a7c1f in std::_Vector_base<svg::SVGElement*, std::allocator<svg::SVGElement*> >::_M_create_storage(unsigned long) /usr/include/c++/11/bits/stl_vector.h:361
+    #5 0x5d92d54a5a0c in std::_Vector_base<svg::SVGElement*, std::allocator<svg::SVGElement*> >::_Vector_base(unsigned long, std::allocator<svg::SVGElement*> const&) /usr/include/c++/11/bits/stl_vector.h:305
+    #6 0x5d92d54a39ca in std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >::vector(std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> > const&) /usr/include/c++/11/bits/stl_vector.h:555
+    #7 0x5d92d549bad0 in svg::Group::Group(std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >) /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:10
+    #8 0x5d92d54ae280 in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:82
+    #9 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #10 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #11 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #12 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #13 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #14 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #15 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+SUMMARY: AddressSanitizer: 528 byte(s) leaked in 15 allocation(s).
 >>>> [14] group_6 <<<<
-pixel (10 10): expected 255 0 0 got 255 255 255
+
+=================================================================
+==17657==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 96 byte(s) in 3 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54ae24d in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:82
+    #2 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #3 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #4 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #5 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #6 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #7 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #8 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 560 byte(s) in 2 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54aa556 in __gnu_cxx::new_allocator<svg::Point>::allocate(unsigned long, void const*) /usr/include/c++/11/ext/new_allocator.h:127
+    #2 0x5d92d54a9b6d in std::allocator_traits<std::allocator<svg::Point> >::allocate(std::allocator<svg::Point>&, unsigned long) /usr/include/c++/11/bits/alloc_traits.h:464
+    #3 0x5d92d54a9051 in std::_Vector_base<svg::Point, std::allocator<svg::Point> >::_M_allocate(unsigned long) /usr/include/c++/11/bits/stl_vector.h:346
+    #4 0x5d92d54a88c9 in std::_Vector_base<svg::Point, std::allocator<svg::Point> >::_M_create_storage(unsigned long) (/home/mariajvieira/Desktop/prog/project/test+0x1c28c9)
+    #5 0x5d92d54a6f78 in std::_Vector_base<svg::Point, std::allocator<svg::Point> >::_Vector_base(unsigned long, std::allocator<svg::Point> const&) (/home/mariajvieira/Desktop/prog/project/test+0x1c0f78)
+    #6 0x5d92d54a4916 in std::vector<svg::Point, std::allocator<svg::Point> >::vector(std::vector<svg::Point, std::allocator<svg::Point> > const&) /usr/include/c++/11/bits/stl_vector.h:555
+    #7 0x5d92d549f5b5 in svg::Polyline::Polyline(std::vector<svg::Point, std::allocator<svg::Point> > const&, svg::Color) /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:75
+    #8 0x5d92d54b0652 in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:143
+    #9 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #10 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #11 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #12 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #13 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #14 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #15 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #16 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 560 byte(s) in 2 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54aa556 in __gnu_cxx::new_allocator<svg::Point>::allocate(unsigned long, void const*) /usr/include/c++/11/ext/new_allocator.h:127
+    #2 0x5d92d54a9b6d in std::allocator_traits<std::allocator<svg::Point> >::allocate(std::allocator<svg::Point>&, unsigned long) /usr/include/c++/11/bits/alloc_traits.h:464
+    #3 0x5d92d54a9051 in std::_Vector_base<svg::Point, std::allocator<svg::Point> >::_M_allocate(unsigned long) /usr/include/c++/11/bits/stl_vector.h:346
+    #4 0x5d92d54a88c9 in std::_Vector_base<svg::Point, std::allocator<svg::Point> >::_M_create_storage(unsigned long) (/home/mariajvieira/Desktop/prog/project/test+0x1c28c9)
+    #5 0x5d92d54a6f78 in std::_Vector_base<svg::Point, std::allocator<svg::Point> >::_Vector_base(unsigned long, std::allocator<svg::Point> const&) (/home/mariajvieira/Desktop/prog/project/test+0x1c0f78)
+    #6 0x5d92d54a4916 in std::vector<svg::Point, std::allocator<svg::Point> >::vector(std::vector<svg::Point, std::allocator<svg::Point> > const&) /usr/include/c++/11/bits/stl_vector.h:555
+    #7 0x5d92d549f5b5 in svg::Polyline::Polyline(std::vector<svg::Point, std::allocator<svg::Point> > const&, svg::Color) /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:75
+    #8 0x5d92d54b0652 in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:143
+    #9 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #10 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #11 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #12 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #13 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #14 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #15 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #16 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #17 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 80 byte(s) in 2 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54b05aa in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:143
+    #2 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #3 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #4 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #5 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #6 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #7 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #8 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #9 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #10 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 80 byte(s) in 2 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54b05aa in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:143
+    #2 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #3 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #4 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #5 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #6 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #7 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #8 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #9 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 32 byte(s) in 1 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54ae24d in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:82
+    #2 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #3 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #4 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #5 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #6 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #7 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #8 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #9 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 24 byte(s) in 3 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54a9f96 in __gnu_cxx::new_allocator<svg::SVGElement*>::allocate(unsigned long, void const*) /usr/include/c++/11/ext/new_allocator.h:127
+    #2 0x5d92d54a92fc in std::allocator_traits<std::allocator<svg::SVGElement*> >::allocate(std::allocator<svg::SVGElement*>&, unsigned long) /usr/include/c++/11/bits/alloc_traits.h:464
+    #3 0x5d92d54a8631 in std::_Vector_base<svg::SVGElement*, std::allocator<svg::SVGElement*> >::_M_allocate(unsigned long) /usr/include/c++/11/bits/stl_vector.h:346
+    #4 0x5d92d54a7c1f in std::_Vector_base<svg::SVGElement*, std::allocator<svg::SVGElement*> >::_M_create_storage(unsigned long) /usr/include/c++/11/bits/stl_vector.h:361
+    #5 0x5d92d54a5a0c in std::_Vector_base<svg::SVGElement*, std::allocator<svg::SVGElement*> >::_Vector_base(unsigned long, std::allocator<svg::SVGElement*> const&) /usr/include/c++/11/bits/stl_vector.h:305
+    #6 0x5d92d54a39ca in std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >::vector(std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> > const&) /usr/include/c++/11/bits/stl_vector.h:555
+    #7 0x5d92d549bad0 in svg::Group::Group(std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >) /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:10
+    #8 0x5d92d54ae280 in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:82
+    #9 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #10 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #11 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #12 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #13 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #14 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #15 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 16 byte(s) in 1 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54a9f96 in __gnu_cxx::new_allocator<svg::SVGElement*>::allocate(unsigned long, void const*) /usr/include/c++/11/ext/new_allocator.h:127
+    #2 0x5d92d54a92fc in std::allocator_traits<std::allocator<svg::SVGElement*> >::allocate(std::allocator<svg::SVGElement*>&, unsigned long) /usr/include/c++/11/bits/alloc_traits.h:464
+    #3 0x5d92d54a8631 in std::_Vector_base<svg::SVGElement*, std::allocator<svg::SVGElement*> >::_M_allocate(unsigned long) /usr/include/c++/11/bits/stl_vector.h:346
+    #4 0x5d92d54a7c1f in std::_Vector_base<svg::SVGElement*, std::allocator<svg::SVGElement*> >::_M_create_storage(unsigned long) /usr/include/c++/11/bits/stl_vector.h:361
+    #5 0x5d92d54a5a0c in std::_Vector_base<svg::SVGElement*, std::allocator<svg::SVGElement*> >::_Vector_base(unsigned long, std::allocator<svg::SVGElement*> const&) /usr/include/c++/11/bits/stl_vector.h:305
+    #6 0x5d92d54a39ca in std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >::vector(std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> > const&) /usr/include/c++/11/bits/stl_vector.h:555
+    #7 0x5d92d549bad0 in svg::Group::Group(std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >) /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:10
+    #8 0x5d92d54ae280 in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:82
+    #9 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #10 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #11 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #12 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #13 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #14 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #15 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #16 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+SUMMARY: AddressSanitizer: 1448 byte(s) leaked in 16 allocation(s).
 >>>> [15] group_7 <<<<
-pixel (36 80): expected 255 0 0 got 255 255 255
+
+=================================================================
+==17665==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 32 byte(s) in 1 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54ae24d in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:82
+    #2 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #3 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #4 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #5 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #6 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #7 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #8 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 160 byte(s) in 4 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54b2aec in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:205
+    #2 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #3 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #4 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #5 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #6 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #7 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #8 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #9 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 128 byte(s) in 4 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54aa556 in __gnu_cxx::new_allocator<svg::Point>::allocate(unsigned long, void const*) /usr/include/c++/11/ext/new_allocator.h:127
+    #2 0x5d92d54a9b6d in std::allocator_traits<std::allocator<svg::Point> >::allocate(std::allocator<svg::Point>&, unsigned long) /usr/include/c++/11/bits/alloc_traits.h:464
+    #3 0x5d92d54a9051 in std::_Vector_base<svg::Point, std::allocator<svg::Point> >::_M_allocate(unsigned long) /usr/include/c++/11/bits/stl_vector.h:346
+    #4 0x5d92d54a88c9 in std::_Vector_base<svg::Point, std::allocator<svg::Point> >::_M_create_storage(unsigned long) (/home/mariajvieira/Desktop/prog/project/test+0x1c28c9)
+    #5 0x5d92d54a6f78 in std::_Vector_base<svg::Point, std::allocator<svg::Point> >::_Vector_base(unsigned long, std::allocator<svg::Point> const&) (/home/mariajvieira/Desktop/prog/project/test+0x1c0f78)
+    #6 0x5d92d54a4916 in std::vector<svg::Point, std::allocator<svg::Point> >::vector(std::vector<svg::Point, std::allocator<svg::Point> > const&) /usr/include/c++/11/bits/stl_vector.h:555
+    #7 0x5d92d54a142d in svg::Polygon::Polygon(std::vector<svg::Point, std::allocator<svg::Point> > const&, svg::Color) /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:106
+    #8 0x5d92d54a2e1f in svg::Rect::Rect(int, int, svg::Color, int, int) /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:134
+    #9 0x5d92d54b2baa in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:205
+    #10 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #11 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #12 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #13 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #14 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #15 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #16 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #17 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 32 byte(s) in 1 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54a9f96 in __gnu_cxx::new_allocator<svg::SVGElement*>::allocate(unsigned long, void const*) /usr/include/c++/11/ext/new_allocator.h:127
+    #2 0x5d92d54a92fc in std::allocator_traits<std::allocator<svg::SVGElement*> >::allocate(std::allocator<svg::SVGElement*>&, unsigned long) /usr/include/c++/11/bits/alloc_traits.h:464
+    #3 0x5d92d54a8631 in std::_Vector_base<svg::SVGElement*, std::allocator<svg::SVGElement*> >::_M_allocate(unsigned long) /usr/include/c++/11/bits/stl_vector.h:346
+    #4 0x5d92d54a7c1f in std::_Vector_base<svg::SVGElement*, std::allocator<svg::SVGElement*> >::_M_create_storage(unsigned long) /usr/include/c++/11/bits/stl_vector.h:361
+    #5 0x5d92d54a5a0c in std::_Vector_base<svg::SVGElement*, std::allocator<svg::SVGElement*> >::_Vector_base(unsigned long, std::allocator<svg::SVGElement*> const&) /usr/include/c++/11/bits/stl_vector.h:305
+    #6 0x5d92d54a39ca in std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >::vector(std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> > const&) /usr/include/c++/11/bits/stl_vector.h:555
+    #7 0x5d92d549bad0 in svg::Group::Group(std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >) /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:10
+    #8 0x5d92d54ae280 in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:82
+    #9 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #10 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #11 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #12 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #13 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #14 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #15 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+SUMMARY: AddressSanitizer: 352 byte(s) leaked in 10 allocation(s).
 >>>> [16] line_1 <<<<
 >>>> [17] line_2 <<<<
 >>>> [18] lion <<<<
@@ -67,10 +644,384 @@ pixel (11 5): expected 255 0 0 got 255 255 255
 >>>> [57] use_2 <<<<
 pixel (15 100): expected 0 0 255 got 255 255 255
 >>>> [58] use_3 <<<<
-pixel (0 250): expected 255 0 0 got 255 255 255
+pixel (0 750): expected 255 0 0 got 255 255 255
+
+=================================================================
+==17769==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 32 byte(s) in 1 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54ae24d in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:82
+    #2 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #3 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #4 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #5 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #6 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #7 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #8 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 128 byte(s) in 4 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54af4d1 in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:115
+    #2 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #3 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #4 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #5 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #6 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #7 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #8 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #9 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 80 byte(s) in 1 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54aa556 in __gnu_cxx::new_allocator<svg::Point>::allocate(unsigned long, void const*) /usr/include/c++/11/ext/new_allocator.h:127
+    #2 0x5d92d54a9b6d in std::allocator_traits<std::allocator<svg::Point> >::allocate(std::allocator<svg::Point>&, unsigned long) /usr/include/c++/11/bits/alloc_traits.h:464
+    #3 0x5d92d54a9051 in std::_Vector_base<svg::Point, std::allocator<svg::Point> >::_M_allocate(unsigned long) /usr/include/c++/11/bits/stl_vector.h:346
+    #4 0x5d92d54a88c9 in std::_Vector_base<svg::Point, std::allocator<svg::Point> >::_M_create_storage(unsigned long) (/home/mariajvieira/Desktop/prog/project/test+0x1c28c9)
+    #5 0x5d92d54a6f78 in std::_Vector_base<svg::Point, std::allocator<svg::Point> >::_Vector_base(unsigned long, std::allocator<svg::Point> const&) (/home/mariajvieira/Desktop/prog/project/test+0x1c0f78)
+    #6 0x5d92d54a4916 in std::vector<svg::Point, std::allocator<svg::Point> >::vector(std::vector<svg::Point, std::allocator<svg::Point> > const&) /usr/include/c++/11/bits/stl_vector.h:555
+    #7 0x5d92d54a142d in svg::Polygon::Polygon(std::vector<svg::Point, std::allocator<svg::Point> > const&, svg::Color) /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:106
+    #8 0x5d92d54b2187 in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:188
+    #9 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #10 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #11 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #12 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #13 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #14 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #15 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #16 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 40 byte(s) in 1 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54a9f96 in __gnu_cxx::new_allocator<svg::SVGElement*>::allocate(unsigned long, void const*) /usr/include/c++/11/ext/new_allocator.h:127
+    #2 0x5d92d54a92fc in std::allocator_traits<std::allocator<svg::SVGElement*> >::allocate(std::allocator<svg::SVGElement*>&, unsigned long) /usr/include/c++/11/bits/alloc_traits.h:464
+    #3 0x5d92d54a8631 in std::_Vector_base<svg::SVGElement*, std::allocator<svg::SVGElement*> >::_M_allocate(unsigned long) /usr/include/c++/11/bits/stl_vector.h:346
+    #4 0x5d92d54a7c1f in std::_Vector_base<svg::SVGElement*, std::allocator<svg::SVGElement*> >::_M_create_storage(unsigned long) /usr/include/c++/11/bits/stl_vector.h:361
+    #5 0x5d92d54a5a0c in std::_Vector_base<svg::SVGElement*, std::allocator<svg::SVGElement*> >::_Vector_base(unsigned long, std::allocator<svg::SVGElement*> const&) /usr/include/c++/11/bits/stl_vector.h:305
+    #6 0x5d92d54a39ca in std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >::vector(std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> > const&) /usr/include/c++/11/bits/stl_vector.h:555
+    #7 0x5d92d549bad0 in svg::Group::Group(std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >) /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:10
+    #8 0x5d92d54ae280 in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:82
+    #9 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #10 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #11 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #12 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #13 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #14 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #15 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 40 byte(s) in 1 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54b20df in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:188
+    #2 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #3 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #4 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #5 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #6 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #7 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #8 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #9 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+SUMMARY: AddressSanitizer: 320 byte(s) leaked in 8 allocation(s).
 >>>> [59] use_4 <<<<
-pixel (0 0): expected 255 0 0 got 255 255 255
+pixel (0 500): expected 255 0 0 got 255 255 255
+
+=================================================================
+==17771==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 32 byte(s) in 1 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54ae24d in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:82
+    #2 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #3 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #4 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #5 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #6 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #7 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #8 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 160 byte(s) in 4 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54b2aec in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:205
+    #2 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #3 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #4 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #5 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #6 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #7 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #8 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #9 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 128 byte(s) in 4 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54aa556 in __gnu_cxx::new_allocator<svg::Point>::allocate(unsigned long, void const*) /usr/include/c++/11/ext/new_allocator.h:127
+    #2 0x5d92d54a9b6d in std::allocator_traits<std::allocator<svg::Point> >::allocate(std::allocator<svg::Point>&, unsigned long) /usr/include/c++/11/bits/alloc_traits.h:464
+    #3 0x5d92d54a9051 in std::_Vector_base<svg::Point, std::allocator<svg::Point> >::_M_allocate(unsigned long) /usr/include/c++/11/bits/stl_vector.h:346
+    #4 0x5d92d54a88c9 in std::_Vector_base<svg::Point, std::allocator<svg::Point> >::_M_create_storage(unsigned long) (/home/mariajvieira/Desktop/prog/project/test+0x1c28c9)
+    #5 0x5d92d54a6f78 in std::_Vector_base<svg::Point, std::allocator<svg::Point> >::_Vector_base(unsigned long, std::allocator<svg::Point> const&) (/home/mariajvieira/Desktop/prog/project/test+0x1c0f78)
+    #6 0x5d92d54a4916 in std::vector<svg::Point, std::allocator<svg::Point> >::vector(std::vector<svg::Point, std::allocator<svg::Point> > const&) /usr/include/c++/11/bits/stl_vector.h:555
+    #7 0x5d92d54a142d in svg::Polygon::Polygon(std::vector<svg::Point, std::allocator<svg::Point> > const&, svg::Color) /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:106
+    #8 0x5d92d54a2e1f in svg::Rect::Rect(int, int, svg::Color, int, int) /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:134
+    #9 0x5d92d54b2baa in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:205
+    #10 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #11 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #12 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #13 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #14 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #15 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #16 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #17 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 80 byte(s) in 1 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54aa556 in __gnu_cxx::new_allocator<svg::Point>::allocate(unsigned long, void const*) /usr/include/c++/11/ext/new_allocator.h:127
+    #2 0x5d92d54a9b6d in std::allocator_traits<std::allocator<svg::Point> >::allocate(std::allocator<svg::Point>&, unsigned long) /usr/include/c++/11/bits/alloc_traits.h:464
+    #3 0x5d92d54a9051 in std::_Vector_base<svg::Point, std::allocator<svg::Point> >::_M_allocate(unsigned long) /usr/include/c++/11/bits/stl_vector.h:346
+    #4 0x5d92d54a88c9 in std::_Vector_base<svg::Point, std::allocator<svg::Point> >::_M_create_storage(unsigned long) (/home/mariajvieira/Desktop/prog/project/test+0x1c28c9)
+    #5 0x5d92d54a6f78 in std::_Vector_base<svg::Point, std::allocator<svg::Point> >::_Vector_base(unsigned long, std::allocator<svg::Point> const&) (/home/mariajvieira/Desktop/prog/project/test+0x1c0f78)
+    #6 0x5d92d54a4916 in std::vector<svg::Point, std::allocator<svg::Point> >::vector(std::vector<svg::Point, std::allocator<svg::Point> > const&) /usr/include/c++/11/bits/stl_vector.h:555
+    #7 0x5d92d54a142d in svg::Polygon::Polygon(std::vector<svg::Point, std::allocator<svg::Point> > const&, svg::Color) /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:106
+    #8 0x5d92d54b2187 in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:188
+    #9 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #10 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #11 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #12 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #13 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #14 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #15 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #16 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 40 byte(s) in 1 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54a9f96 in __gnu_cxx::new_allocator<svg::SVGElement*>::allocate(unsigned long, void const*) /usr/include/c++/11/ext/new_allocator.h:127
+    #2 0x5d92d54a92fc in std::allocator_traits<std::allocator<svg::SVGElement*> >::allocate(std::allocator<svg::SVGElement*>&, unsigned long) /usr/include/c++/11/bits/alloc_traits.h:464
+    #3 0x5d92d54a8631 in std::_Vector_base<svg::SVGElement*, std::allocator<svg::SVGElement*> >::_M_allocate(unsigned long) /usr/include/c++/11/bits/stl_vector.h:346
+    #4 0x5d92d54a7c1f in std::_Vector_base<svg::SVGElement*, std::allocator<svg::SVGElement*> >::_M_create_storage(unsigned long) /usr/include/c++/11/bits/stl_vector.h:361
+    #5 0x5d92d54a5a0c in std::_Vector_base<svg::SVGElement*, std::allocator<svg::SVGElement*> >::_Vector_base(unsigned long, std::allocator<svg::SVGElement*> const&) /usr/include/c++/11/bits/stl_vector.h:305
+    #6 0x5d92d54a39ca in std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >::vector(std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> > const&) /usr/include/c++/11/bits/stl_vector.h:555
+    #7 0x5d92d549bad0 in svg::Group::Group(std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >) /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:10
+    #8 0x5d92d54ae280 in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:82
+    #9 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #10 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #11 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #12 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #13 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #14 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #15 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 40 byte(s) in 1 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54b20df in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:188
+    #2 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #3 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #4 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #5 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #6 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #7 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #8 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #9 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+SUMMARY: AddressSanitizer: 480 byte(s) leaked in 12 allocation(s).
 >>>> [60] use_5 <<<<
-pixel (51 51): expected 0 255 0 got 255 255 255
+pixel (302 51): expected 255 0 0 got 255 255 255
+
+=================================================================
+==17785==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 96 byte(s) in 3 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54ae24d in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:82
+    #2 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #3 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #4 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #5 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #6 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #7 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #8 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 120 byte(s) in 3 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54b0fb7 in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:160
+    #2 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #3 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #4 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #5 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #6 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #7 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #8 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #9 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 48 byte(s) in 3 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54aa556 in __gnu_cxx::new_allocator<svg::Point>::allocate(unsigned long, void const*) /usr/include/c++/11/ext/new_allocator.h:127
+    #2 0x5d92d54a9b6d in std::allocator_traits<std::allocator<svg::Point> >::allocate(std::allocator<svg::Point>&, unsigned long) /usr/include/c++/11/bits/alloc_traits.h:464
+    #3 0x5d92d54a9051 in std::_Vector_base<svg::Point, std::allocator<svg::Point> >::_M_allocate(unsigned long) /usr/include/c++/11/bits/stl_vector.h:346
+    #4 0x5d92d54a88c9 in std::_Vector_base<svg::Point, std::allocator<svg::Point> >::_M_create_storage(unsigned long) (/home/mariajvieira/Desktop/prog/project/test+0x1c28c9)
+    #5 0x5d92d54a6f78 in std::_Vector_base<svg::Point, std::allocator<svg::Point> >::_Vector_base(unsigned long, std::allocator<svg::Point> const&) (/home/mariajvieira/Desktop/prog/project/test+0x1c0f78)
+    #6 0x5d92d54a4916 in std::vector<svg::Point, std::allocator<svg::Point> >::vector(std::vector<svg::Point, std::allocator<svg::Point> > const&) /usr/include/c++/11/bits/stl_vector.h:555
+    #7 0x5d92d549f5b5 in svg::Polyline::Polyline(std::vector<svg::Point, std::allocator<svg::Point> > const&, svg::Color) /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:75
+    #8 0x5d92d54a0f84 in svg::Line::Line(int, int, int, int, svg::Color) /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:101
+    #9 0x5d92d54b1072 in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:160
+    #10 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #11 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #12 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #13 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #14 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #15 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #16 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #17 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 24 byte(s) in 1 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54a9f96 in __gnu_cxx::new_allocator<svg::SVGElement*>::allocate(unsigned long, void const*) /usr/include/c++/11/ext/new_allocator.h:127
+    #2 0x5d92d54a92fc in std::allocator_traits<std::allocator<svg::SVGElement*> >::allocate(std::allocator<svg::SVGElement*>&, unsigned long) /usr/include/c++/11/bits/alloc_traits.h:464
+    #3 0x5d92d54a8631 in std::_Vector_base<svg::SVGElement*, std::allocator<svg::SVGElement*> >::_M_allocate(unsigned long) /usr/include/c++/11/bits/stl_vector.h:346
+    #4 0x5d92d54a7c1f in std::_Vector_base<svg::SVGElement*, std::allocator<svg::SVGElement*> >::_M_create_storage(unsigned long) /usr/include/c++/11/bits/stl_vector.h:361
+    #5 0x5d92d54a5a0c in std::_Vector_base<svg::SVGElement*, std::allocator<svg::SVGElement*> >::_Vector_base(unsigned long, std::allocator<svg::SVGElement*> const&) /usr/include/c++/11/bits/stl_vector.h:305
+    #6 0x5d92d54a39ca in std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >::vector(std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> > const&) /usr/include/c++/11/bits/stl_vector.h:555
+    #7 0x5d92d549bad0 in svg::Group::Group(std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >) /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:10
+    #8 0x5d92d54ae280 in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:82
+    #9 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #10 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #11 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #12 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #13 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #14 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #15 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+SUMMARY: AddressSanitizer: 288 byte(s) leaked in 10 allocation(s).
 >>>> [61] use_6 <<<<
-pixel (0 0): expected 0 0 0 got 255 255 255
+pixel (266 346): expected 0 0 255 got 255 255 255
+
+=================================================================
+==17787==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 32 byte(s) in 1 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54ae24d in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:82
+    #2 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #3 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #4 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #5 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #6 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #7 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #8 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 160 byte(s) in 4 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54b2aec in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:205
+    #2 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #3 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #4 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #5 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #6 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #7 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #8 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #9 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #10 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #11 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 128 byte(s) in 4 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54aa556 in __gnu_cxx::new_allocator<svg::Point>::allocate(unsigned long, void const*) /usr/include/c++/11/ext/new_allocator.h:127
+    #2 0x5d92d54a9b6d in std::allocator_traits<std::allocator<svg::Point> >::allocate(std::allocator<svg::Point>&, unsigned long) /usr/include/c++/11/bits/alloc_traits.h:464
+    #3 0x5d92d54a9051 in std::_Vector_base<svg::Point, std::allocator<svg::Point> >::_M_allocate(unsigned long) /usr/include/c++/11/bits/stl_vector.h:346
+    #4 0x5d92d54a88c9 in std::_Vector_base<svg::Point, std::allocator<svg::Point> >::_M_create_storage(unsigned long) (/home/mariajvieira/Desktop/prog/project/test+0x1c28c9)
+    #5 0x5d92d54a6f78 in std::_Vector_base<svg::Point, std::allocator<svg::Point> >::_Vector_base(unsigned long, std::allocator<svg::Point> const&) (/home/mariajvieira/Desktop/prog/project/test+0x1c0f78)
+    #6 0x5d92d54a4916 in std::vector<svg::Point, std::allocator<svg::Point> >::vector(std::vector<svg::Point, std::allocator<svg::Point> > const&) /usr/include/c++/11/bits/stl_vector.h:555
+    #7 0x5d92d54a142d in svg::Polygon::Polygon(std::vector<svg::Point, std::allocator<svg::Point> > const&, svg::Color) /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:106
+    #8 0x5d92d54a2e1f in svg::Rect::Rect(int, int, svg::Color, int, int) /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:134
+    #9 0x5d92d54b2baa in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:205
+    #10 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #11 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #12 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #13 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #14 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #15 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #16 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #17 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #18 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #19 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 64 byte(s) in 2 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54ae24d in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:82
+    #2 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #3 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #4 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #5 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #6 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #7 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #8 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #9 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #10 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 32 byte(s) in 1 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54ae24d in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:82
+    #2 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #3 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #4 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #5 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #6 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #7 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #8 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #9 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 32 byte(s) in 1 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54a9f96 in __gnu_cxx::new_allocator<svg::SVGElement*>::allocate(unsigned long, void const*) /usr/include/c++/11/ext/new_allocator.h:127
+    #2 0x5d92d54a92fc in std::allocator_traits<std::allocator<svg::SVGElement*> >::allocate(std::allocator<svg::SVGElement*>&, unsigned long) /usr/include/c++/11/bits/alloc_traits.h:464
+    #3 0x5d92d54a8631 in std::_Vector_base<svg::SVGElement*, std::allocator<svg::SVGElement*> >::_M_allocate(unsigned long) /usr/include/c++/11/bits/stl_vector.h:346
+    #4 0x5d92d54a7c1f in std::_Vector_base<svg::SVGElement*, std::allocator<svg::SVGElement*> >::_M_create_storage(unsigned long) /usr/include/c++/11/bits/stl_vector.h:361
+    #5 0x5d92d54a5a0c in std::_Vector_base<svg::SVGElement*, std::allocator<svg::SVGElement*> >::_Vector_base(unsigned long, std::allocator<svg::SVGElement*> const&) /usr/include/c++/11/bits/stl_vector.h:305
+    #6 0x5d92d54a39ca in std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >::vector(std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> > const&) /usr/include/c++/11/bits/stl_vector.h:555
+    #7 0x5d92d549bad0 in svg::Group::Group(std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >) /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:10
+    #8 0x5d92d54ae280 in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:82
+    #9 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #10 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #11 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #12 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #13 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #14 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #15 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #16 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #17 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 16 byte(s) in 1 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54a9f96 in __gnu_cxx::new_allocator<svg::SVGElement*>::allocate(unsigned long, void const*) /usr/include/c++/11/ext/new_allocator.h:127
+    #2 0x5d92d54a92fc in std::allocator_traits<std::allocator<svg::SVGElement*> >::allocate(std::allocator<svg::SVGElement*>&, unsigned long) /usr/include/c++/11/bits/alloc_traits.h:464
+    #3 0x5d92d54a8631 in std::_Vector_base<svg::SVGElement*, std::allocator<svg::SVGElement*> >::_M_allocate(unsigned long) /usr/include/c++/11/bits/stl_vector.h:346
+    #4 0x5d92d54a7c1f in std::_Vector_base<svg::SVGElement*, std::allocator<svg::SVGElement*> >::_M_create_storage(unsigned long) /usr/include/c++/11/bits/stl_vector.h:361
+    #5 0x5d92d54a5a0c in std::_Vector_base<svg::SVGElement*, std::allocator<svg::SVGElement*> >::_Vector_base(unsigned long, std::allocator<svg::SVGElement*> const&) /usr/include/c++/11/bits/stl_vector.h:305
+    #6 0x5d92d54a39ca in std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >::vector(std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> > const&) /usr/include/c++/11/bits/stl_vector.h:555
+    #7 0x5d92d549bad0 in svg::Group::Group(std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >) /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:10
+    #8 0x5d92d54ae280 in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:82
+    #9 0x5d92d54ae0bd in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:78
+    #10 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #11 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #12 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #13 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #14 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #15 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #16 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 8 byte(s) in 1 object(s) allocated from:
+    #0 0x7375270b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5d92d54a9f96 in __gnu_cxx::new_allocator<svg::SVGElement*>::allocate(unsigned long, void const*) /usr/include/c++/11/ext/new_allocator.h:127
+    #2 0x5d92d54a92fc in std::allocator_traits<std::allocator<svg::SVGElement*> >::allocate(std::allocator<svg::SVGElement*>&, unsigned long) /usr/include/c++/11/bits/alloc_traits.h:464
+    #3 0x5d92d54a8631 in std::_Vector_base<svg::SVGElement*, std::allocator<svg::SVGElement*> >::_M_allocate(unsigned long) /usr/include/c++/11/bits/stl_vector.h:346
+    #4 0x5d92d54a7c1f in std::_Vector_base<svg::SVGElement*, std::allocator<svg::SVGElement*> >::_M_create_storage(unsigned long) /usr/include/c++/11/bits/stl_vector.h:361
+    #5 0x5d92d54a5a0c in std::_Vector_base<svg::SVGElement*, std::allocator<svg::SVGElement*> >::_Vector_base(unsigned long, std::allocator<svg::SVGElement*> const&) /usr/include/c++/11/bits/stl_vector.h:305
+    #6 0x5d92d54a39ca in std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >::vector(std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> > const&) /usr/include/c++/11/bits/stl_vector.h:555
+    #7 0x5d92d549bad0 in svg::Group::Group(std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >) /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:10
+    #8 0x5d92d54ae280 in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:82
+    #9 0x5d92d54b5093 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #10 0x5d92d5499424 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #11 0x5d92d543a6d3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1546d3)
+    #12 0x5d92d543c807 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x156807)
+    #13 0x5d92d543de72 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x157e72)
+    #14 0x5d92d5439855 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #15 0x737526029d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+SUMMARY: AddressSanitizer: 472 byte(s) leaked in 15 allocation(s).
