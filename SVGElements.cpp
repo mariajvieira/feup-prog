@@ -54,11 +54,12 @@ namespace svg
     }
 
 
-//FALTA ESTA
+//TENTAR PERCEBER
     void Ellipse::scale(int v,Point &t) {
-        center = center.scale(t, v);
-        radius = radius.scale(t,v);
-        
+        center = center.translate({-t.x, -t.y}).scale({0, 0}, v);
+        center = center.translate(t);
+    
+        radius = radius.scale({0, 0}, v);
     }
 
 
