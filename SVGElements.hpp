@@ -16,10 +16,15 @@ namespace svg
     public:
         SVGElement();
         virtual ~SVGElement();
+        SVGElement(string id_);
         virtual void draw(PNGImage &img) const = 0;
         virtual void translate(const Point &t) = 0;
         virtual void rotate(int degrees,Point &t) = 0;
         virtual void scale(int v, Point &t) = 0;
+        virtual SVGElement* clone() const = 0;
+        string get_id();
+    private:
+        string id;
     };
 
     // Declaration of namespace functions
@@ -37,12 +42,14 @@ namespace svg
     class Group : public SVGElement {
     public:
         Group(vector<SVGElement*> elements);
+        ~Group();
         void addElement(SVGElement* e);
         vector<SVGElement*> getElements();
         void draw(PNGImage &img) const override;
         void translate(const Point &t) override;
         void rotate(int degrees,Point &t) override;
         void scale(int v,Point &t) override;
+        Group* clone() const override;
 
     private:
         vector<SVGElement*> elements;
@@ -50,14 +57,17 @@ namespace svg
 
 
 
+
     class Ellipse : public SVGElement
     {
     public:
         Ellipse(const Color &fill, const Point &center, const Point &radius);
+        ~Ellipse() {}
         void draw(PNGImage &img) const override;
         void translate(const Point &t) override;
         void rotate(int degrees,Point &t) override;
         void scale(int v,Point &t) override;
+        Ellipse* clone() const override;
 
     private:
         Color fill;
@@ -71,7 +81,9 @@ namespace svg
     {
     public:
         Circle(const Color &fill, const Point &center, const int &radius);
+        ~Circle() {}
         void draw(PNGImage &img) const override;
+        Circle* clone() const override;
     };
 
 
@@ -79,10 +91,12 @@ namespace svg
     {
     public:
         Polyline(const std::vector<Point>& _points, Color _stroke);
+        ~Polyline() {}
         void draw(PNGImage& img) const override;
         void translate(const Point &t) override;
         void rotate(int degrees, Point &t) override;
         void scale(int v,Point &t) override;
+        Polyline* clone() const override;
 
     private:
         std::vector<Point> points; 
@@ -93,7 +107,8 @@ namespace svg
     {
     public:
         Line(int _x1, int _y1, int _x2, int _y2, Color _stroke);
-
+        ~Line() {}
+        Line* clone() const override;
     };
 
     class Polygon : public SVGElement 
@@ -101,10 +116,12 @@ namespace svg
 
     public:
         Polygon(const std::vector<Point>& _points, Color _fill);
+        ~Polygon() {}
         void draw(PNGImage& img) const override;
         void translate(const Point &t) override;
         void rotate(int degrees,Point &t) override;
         void scale(int v,Point &t) override;
+        Polygon* clone() const override;
 
 
     private:
@@ -116,7 +133,9 @@ namespace svg
     {
     public:
         Rect(int _x, int _y, Color _fill, int _width, int _height);
+        ~Rect() {}
+        Rect* clone() const override;
     };
-
 }
+
 #endif

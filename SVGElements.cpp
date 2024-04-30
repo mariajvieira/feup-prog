@@ -3,12 +3,18 @@
 namespace svg
 {
     // These must be defined!
-    SVGElement::SVGElement() {}
+    SVGElement::SVGElement(): id("id") {}
     SVGElement::~SVGElement() {}
+    SVGElement::SVGElement(string id_): id(id_) {}
+    string SVGElement::get_id() {return id;}
     
 
     Group::Group(vector<SVGElement*> elements): elements(elements) {}
-
+    Group::~Group() {
+        for (SVGElement* element : elements) {
+            delete element; 
+        }
+    }
     void Group::addElement(SVGElement* e) {
             elements.push_back(e);
     }
@@ -35,13 +41,15 @@ namespace svg
             e->scale(v,t);
         }
     }
+    Group* Group::clone() const {
+        return new Group(*this); 
+    }
 
     // Ellipse (initial code provided)
     Ellipse::Ellipse(const Color &fill,
                      const Point &center,
                      const Point &radius)
         : fill(fill), center(center), radius(radius) {}
-
     void Ellipse::draw(PNGImage &img) const {
         img.draw_ellipse(center, radius, fill);
     }
@@ -52,9 +60,12 @@ namespace svg
     void Ellipse::rotate(int degrees,Point &t){
         center = center.rotate(t, degrees);
     }
+    Ellipse* Ellipse::clone() const {
+        return new Ellipse(*this); 
+    }
 
 
-//TENTAR PERCEBER
+    //TENTAR PERCEBER
     void Ellipse::scale(int v,Point &t) {
         center = center.translate({-t.x, -t.y}).scale({0, 0}, v);
         center = center.translate(t);
@@ -69,6 +80,9 @@ namespace svg
         
     void Circle::draw(PNGImage &img) const {
         Ellipse::draw(img);
+    }
+    Circle* Circle::clone() const {
+        return new Circle(*this); 
     }
 
     // Polyline
@@ -97,9 +111,16 @@ namespace svg
         }
     }
 
+    Polyline* Polyline::clone() const {
+        return new Polyline(*this); 
+    }
+
     // Line
     Line::Line(int _x1, int _y1, int _x2, int _y2, Color _stroke) 
         : Polyline({{_x1,_y1},{_x2,_y2}},_stroke) {}
+    Line* Line::clone() const {
+        return new Line(*this); 
+    }
 
 
     // Polygon
@@ -128,9 +149,16 @@ namespace svg
         }
     }
 
+    Polygon* Polygon::clone() const {
+        return new Polygon(*this);
+    }
+
 
     
     // Rect
     Rect::Rect(int _x, int _y, Color _fill, int _width, int _height) 
        : Polygon({{_x,_y}, {_x+_width-1, _y}, {_x+_width-1, _y+_height-1}, {_x, _y+_height-1}},_fill) {}
+    Rect* Rect::clone() const {
+        return new Rect(*this); 
+    }
 }

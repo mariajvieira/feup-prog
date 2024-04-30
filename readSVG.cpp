@@ -1,6 +1,8 @@
 #include <iostream>
 #include <sstream>
+#include <algorithm>
 #include "SVGElements.hpp"
+#include <unordered_map>
 #include "external/tinyxml2/tinyxml2.h"
 
 using namespace std;
@@ -36,7 +38,7 @@ namespace svg
     }
 
 
-    void readGroup(XMLElement *child, vector<SVGElement*> &shapes) {
+    void readGroup(XMLElement *child, vector<SVGElement*> &shapes, unordered_map<string, SVGElement*> &id_map) {
             const char* element_name = child->Name();
 
             string transform_attr;
@@ -69,14 +71,32 @@ namespace svg
                 }
             }
         
+            if (strcmp(element_name, "use") == 0) {
+                const char* href_attr = child->Attribute("href");
+                if (href_attr && href_attr[0] == '#') {
+                    string element_id = href_attr + 1; // Skip the '#'
+                    if (id_map.find(element_id) != id_map.end()) {
+                        SVGElement* referenced_element = id_map[element_id];
+                        SVGElement* cloned_element = referenced_element->clone();
 
+            
+                        string transform_attr = child->Attribute("transform");
+                        Point transform_origin{0, 0}; 
+                        if (!transform_attr.empty()) {
+                            applyTransformation(cloned_element, transform_attr, transform_origin);
+                        }
+
+                        shapes.push_back(cloned_element);
+                    }
+                }
+            }
 
             if (strcmp(element_name, "g") == 0) {
 
                 vector<SVGElement*> group_e;
 
                 for (XMLElement *group_child = child->FirstChildElement(); group_child != nullptr; group_child = group_child->NextSiblingElement()) {
-                        readGroup(group_child, group_e);
+                        readGroup(group_child, group_e, id_map);
                 }
 
                
@@ -89,9 +109,6 @@ namespace svg
         
                 shapes.push_back(g);
 
-                for (auto element : group_e) {
-                    delete element;
-                }
 
             }    
             
@@ -119,8 +136,8 @@ namespace svg
                 int r = child->IntAttribute("r");
                 string fill_color = child->Attribute("fill");
                 
-                Circle* e= new Circle(parse_color(fill_color), {cx, cy}, r);
-
+                Circle* e = new Circle(parse_color(fill_color), {cx, cy}, r);
+ 
                 if (istransform) {
                     applyTransformation(e, transform_attr, transform_origin);
                 }
@@ -233,11 +250,17 @@ namespace svg
 
         dimensions.x = xml_elem->IntAttribute("width");
         dimensions.y = xml_elem->IntAttribute("height");
+
+        unordered_map<string, SVGElement*> id_map; 
         
 
         for (XMLElement *child = xml_elem->FirstChildElement(); child != nullptr; child = child->NextSiblingElement())
         {
-            readGroup(child, svg_elements);
+            readGroup(child, svg_elements, id_map);
+            const char* element_id = child->Attribute("id");
+            if (element_id) {
+                id_map[string(element_id)] = svg_elements.back();
+            }
             
         }
     
