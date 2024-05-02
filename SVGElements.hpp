@@ -10,6 +10,10 @@ using namespace std;
 
 namespace svg
 {
+    /**
+     * SVGElement Class
+     * This is the superclass of all type of elements.
+    */
     class SVGElement
     {
 
@@ -39,14 +43,19 @@ namespace svg
 
 
 
+    /**
+     * Group Class
+     * 
+     * This is the class for the Group Elements.
+    */
     class Group : public SVGElement {
     public:
-        Group(vector<SVGElement*> elements);
-        ~Group();
+        Group(vector<SVGElement*> elements);    //constructor
+        ~Group();                               //destructor
         void addElement(SVGElement* e);
         vector<SVGElement*> getElements();
-        void draw(PNGImage &img) const override;
-        void translate(const Point &t) override;
+        void draw(PNGImage &img) const override;    
+        void translate(const Point &t) override; 
         void rotate(int degrees,Point &t) override;
         void scale(int v,Point &t) override;
         Group* clone() const override;

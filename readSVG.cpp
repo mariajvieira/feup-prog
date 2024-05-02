@@ -119,10 +119,7 @@ namespace svg
                     applyTransformation(g, transform_attr, transform_origin);
                 }
 
-        
                 shapes.push_back(g);
-
-
             }    
             
             else if (strcmp(element_name, "ellipse") == 0)
