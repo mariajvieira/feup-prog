@@ -29,6 +29,22 @@ namespace svg
             }
             else if (f_type == "translate")
             {
+                replace(p.begin(), p.end(), ',', ' ');
+                int space_counter=0;
+                for (char c: p) {
+                    if (c==' ') space_counter++;
+                }
+                bool first_space=true;
+                if (space_counter>1) {
+                    for (size_t i=0; i<p.size(); i++) {
+                        if (p[i]==' ') {
+                            if (first_space)
+                                first_space=false;
+                            else p.erase(i,1);
+                        }
+                    }
+                }
+                
                 size_t space_ = p.find(' ');
                 int i1 = stoi(p.substr(0, space_));
                 int i2 = stoi(p.substr(space_ + 1));
@@ -74,14 +90,11 @@ namespace svg
             if (strcmp(element_name, "use") == 0) {
                 const char* href_attr = child->Attribute("href");
                 if (href_attr && href_attr[0] == '#') {
-                    string element_id = href_attr + 1; // Skip the '#'
+                    string element_id = href_attr + 1; 
                     if (id_map.find(element_id) != id_map.end()) {
                         SVGElement* referenced_element = id_map[element_id];
                         SVGElement* cloned_element = referenced_element->clone();
 
-            
-                        string transform_attr = child->Attribute("transform");
-                        Point transform_origin{0, 0}; 
                         if (!transform_attr.empty()) {
                             applyTransformation(cloned_element, transform_attr, transform_origin);
                         }

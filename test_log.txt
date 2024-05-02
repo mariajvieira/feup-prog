@@ -54,12 +54,86 @@
 >>>> [54] translate_polyline <<<<
 >>>> [55] translate_rect <<<<
 >>>> [56] use_1 <<<<
-test: PNGImage.cpp:63: svg::Color& svg::PNGImage::at(int, int): Assertion `y >= 0 && y < height_' failed.
 >>>> [57] use_2 <<<<
 >>>> [58] use_3 <<<<
 test: PNGImage.cpp:63: svg::Color& svg::PNGImage::at(int, int): Assertion `y >= 0 && y < height_' failed.
 >>>> [59] use_4 <<<<
 test: PNGImage.cpp:62: svg::Color& svg::PNGImage::at(int, int): Assertion `x >= 0 && x < width_' failed.
 >>>> [60] use_5 <<<<
-test: PNGImage.cpp:63: svg::Color& svg::PNGImage::at(int, int): Assertion `y >= 0 && y < height_' failed.
+=================================================================
+==10951==ERROR: AddressSanitizer: heap-use-after-free on address 0x6070000003a0 at pc 0x5807e00134f5 bp 0x7ffe96940f30 sp 0x7ffe96940f20
+READ of size 8 at 0x6070000003a0 thread T0
+    #0 0x5807e00134f4 in svg::Group::~Group() /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:15
+    #1 0x5807e00138b3 in svg::Group::~Group() /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:17
+    #2 0x5807e0013619 in svg::Group::~Group() /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:15
+    #3 0x5807e00138b3 in svg::Group::~Group() /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:17
+    #4 0x5807e0010c60 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:20
+    #5 0x5807dffb1813 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x164813)
+    #6 0x5807dffb3947 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x166947)
+    #7 0x5807dffb4fb2 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x167fb2)
+    #8 0x5807dffb0995 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #9 0x724557429d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #10 0x724557429e3f in __libc_start_main_impl ../csu/libc-start.c:392
+    #11 0x5807dffb0554 in _start (/home/mariajvieira/Desktop/prog/project/test+0x163554)
+
+0x6070000003a0 is located 0 bytes inside of 72-byte region [0x6070000003a0,0x6070000003e8)
+freed by thread T0 here:
+    #0 0x7245584b6d07 in operator delete(void*) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:160
+    #1 0x5807e001c203 in svg::Line::~Line() /home/mariajvieira/Desktop/prog/project/SVGElements.hpp:110
+    #2 0x5807e0013619 in svg::Group::~Group() /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:15
+    #3 0x5807e00138b3 in svg::Group::~Group() /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:17
+    #4 0x5807e0010c60 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:20
+    #5 0x5807dffb1813 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x164813)
+    #6 0x5807dffb3947 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x166947)
+    #7 0x5807dffb4fb2 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x167fb2)
+    #8 0x5807dffb0995 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #9 0x724557429d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+previously allocated by thread T0 here:
+    #0 0x7245584b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5807e002c7d6 in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, svg::SVGElement*, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, svg::SVGElement*> > >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:198
+    #2 0x5807e00298dc in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, svg::SVGElement*, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, svg::SVGElement*> > >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:113
+    #3 0x5807e002fa0a in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:273
+    #4 0x5807e0010564 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #5 0x5807dffb1813 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x164813)
+    #6 0x5807dffb3947 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x166947)
+    #7 0x5807dffb4fb2 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x167fb2)
+    #8 0x5807dffb0995 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #9 0x724557429d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+SUMMARY: AddressSanitizer: heap-use-after-free /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:15 in svg::Group::~Group()
+Shadow bytes around the buggy address:
+  0x0c0e7fff8020: 00 00 00 00 00 00 00 00 00 fa fa fa fa fa 00 00
+  0x0c0e7fff8030: 00 00 00 00 00 00 00 fa fa fa fa fa 00 00 00 00
+  0x0c0e7fff8040: 00 00 00 00 00 fa fa fa fa fa 00 00 00 00 00 00
+  0x0c0e7fff8050: 00 00 00 fa fa fa fa fa 00 00 00 00 00 00 00 00
+  0x0c0e7fff8060: 00 fa fa fa fa fa 00 00 00 00 00 00 00 00 00 fa
+=>0x0c0e7fff8070: fa fa fa fa[fd]fd fd fd fd fd fd fd fd fa fa fa
+  0x0c0e7fff8080: fa fa fd fd fd fd fd fd fd fd fd fa fa fa fa fa
+  0x0c0e7fff8090: fd fd fd fd fd fd fd fd fd fa fa fa fa fa fa fa
+  0x0c0e7fff80a0: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c0e7fff80b0: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c0e7fff80c0: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+==10951==ABORTING
 >>>> [61] use_6 <<<<
+pixel (266 346): expected 0 0 255 got 255 255 255
