@@ -45,7 +45,7 @@ namespace svg
         return new Group(*this); 
     }
 
-    // Ellipse (initial code provided)
+    // Ellipse
     Ellipse::Ellipse(const Color &fill,
                      const Point &center,
                      const Point &radius)

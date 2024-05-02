@@ -95,7 +95,7 @@ namespace svg
                         SVGElement* referenced_element = id_map[element_id];
                         SVGElement* cloned_element = referenced_element->clone();
 
-                        if (!transform_attr.empty()) {
+                        if (istransform) {
                             applyTransformation(cloned_element, transform_attr, transform_origin);
                         }
 
@@ -112,7 +112,7 @@ namespace svg
                         readGroup(group_child, group_e, id_map);
                 }
 
-               
+                
                 Group* g = new Group(group_e);
 
                 if (istransform) {

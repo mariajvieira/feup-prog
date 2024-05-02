@@ -61,45 +61,45 @@ test: PNGImage.cpp:63: svg::Color& svg::PNGImage::at(int, int): Assertion `y >= 
 test: PNGImage.cpp:62: svg::Color& svg::PNGImage::at(int, int): Assertion `x >= 0 && x < width_' failed.
 >>>> [60] use_5 <<<<
 =================================================================
-==10951==ERROR: AddressSanitizer: heap-use-after-free on address 0x6070000003a0 at pc 0x5807e00134f5 bp 0x7ffe96940f30 sp 0x7ffe96940f20
+==13213==ERROR: AddressSanitizer: heap-use-after-free on address 0x6070000003a0 at pc 0x5a9a5c3f4667 bp 0x7fffab1ef850 sp 0x7fffab1ef840
 READ of size 8 at 0x6070000003a0 thread T0
-    #0 0x5807e00134f4 in svg::Group::~Group() /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:15
-    #1 0x5807e00138b3 in svg::Group::~Group() /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:17
-    #2 0x5807e0013619 in svg::Group::~Group() /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:15
-    #3 0x5807e00138b3 in svg::Group::~Group() /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:17
-    #4 0x5807e0010c60 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:20
-    #5 0x5807dffb1813 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x164813)
-    #6 0x5807dffb3947 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x166947)
-    #7 0x5807dffb4fb2 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x167fb2)
-    #8 0x5807dffb0995 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
-    #9 0x724557429d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
-    #10 0x724557429e3f in __libc_start_main_impl ../csu/libc-start.c:392
-    #11 0x5807dffb0554 in _start (/home/mariajvieira/Desktop/prog/project/test+0x163554)
+    #0 0x5a9a5c3f4666 in svg::Group::~Group() /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:15
+    #1 0x5a9a5c3f4a25 in svg::Group::~Group() /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:17
+    #2 0x5a9a5c3f478b in svg::Group::~Group() /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:15
+    #3 0x5a9a5c3f4a25 in svg::Group::~Group() /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:17
+    #4 0x5a9a5c3f1c40 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:20
+    #5 0x5a9a5c3927f3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1647f3)
+    #6 0x5a9a5c394927 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x166927)
+    #7 0x5a9a5c395f92 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x167f92)
+    #8 0x5a9a5c391975 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #9 0x7222cf829d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #10 0x7222cf829e3f in __libc_start_main_impl ../csu/libc-start.c:392
+    #11 0x5a9a5c391534 in _start (/home/mariajvieira/Desktop/prog/project/test+0x163534)
 
 0x6070000003a0 is located 0 bytes inside of 72-byte region [0x6070000003a0,0x6070000003e8)
 freed by thread T0 here:
-    #0 0x7245584b6d07 in operator delete(void*) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:160
-    #1 0x5807e001c203 in svg::Line::~Line() /home/mariajvieira/Desktop/prog/project/SVGElements.hpp:110
-    #2 0x5807e0013619 in svg::Group::~Group() /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:15
-    #3 0x5807e00138b3 in svg::Group::~Group() /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:17
-    #4 0x5807e0010c60 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:20
-    #5 0x5807dffb1813 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x164813)
-    #6 0x5807dffb3947 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x166947)
-    #7 0x5807dffb4fb2 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x167fb2)
-    #8 0x5807dffb0995 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
-    #9 0x724557429d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #0 0x7222d08b6d07 in operator delete(void*) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:160
+    #1 0x5a9a5c3fd375 in svg::Line::~Line() /home/mariajvieira/Desktop/prog/project/SVGElements.hpp:110
+    #2 0x5a9a5c3f478b in svg::Group::~Group() /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:15
+    #3 0x5a9a5c3f4a25 in svg::Group::~Group() /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:17
+    #4 0x5a9a5c3f1c40 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:20
+    #5 0x5a9a5c3927f3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1647f3)
+    #6 0x5a9a5c394927 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x166927)
+    #7 0x5a9a5c395f92 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x167f92)
+    #8 0x5a9a5c391975 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #9 0x7222cf829d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
 
 previously allocated by thread T0 here:
-    #0 0x7245584b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
-    #1 0x5807e002c7d6 in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, svg::SVGElement*, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, svg::SVGElement*> > >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:198
-    #2 0x5807e00298dc in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, svg::SVGElement*, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, svg::SVGElement*> > >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:113
-    #3 0x5807e002fa0a in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:273
-    #4 0x5807e0010564 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
-    #5 0x5807dffb1813 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x164813)
-    #6 0x5807dffb3947 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x166947)
-    #7 0x5807dffb4fb2 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x167fb2)
-    #8 0x5807dffb0995 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
-    #9 0x724557429d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #0 0x7222d08b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5a9a5c40da49 in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, svg::SVGElement*, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, svg::SVGElement*> > >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:197
+    #2 0x5a9a5c40aa41 in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, svg::SVGElement*, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, svg::SVGElement*> > >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:112
+    #3 0x5a9a5c410d16 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
+    #4 0x5a9a5c3f1544 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #5 0x5a9a5c3927f3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1647f3)
+    #6 0x5a9a5c394927 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x166927)
+    #7 0x5a9a5c395f92 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x167f92)
+    #8 0x5a9a5c391975 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #9 0x7222cf829d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
 
 SUMMARY: AddressSanitizer: heap-use-after-free /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:15 in svg::Group::~Group()
 Shadow bytes around the buggy address:
@@ -134,6 +134,6 @@ Shadow byte legend (one shadow byte represents 8 application bytes):
   Left alloca redzone:     ca
   Right alloca redzone:    cb
   Shadow gap:              cc
-==10951==ABORTING
+==13213==ABORTING
 >>>> [61] use_6 <<<<
 pixel (266 346): expected 0 0 255 got 255 255 255
