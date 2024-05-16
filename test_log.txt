@@ -1,105 +1,1394 @@
 >>>> [1] batman <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->1
+SHAPES SIZE --->2
+SHAPES SIZE --->3
+SHAPES SIZE --->4
+SHAPES SIZE --->5
+SHAPES SIZE --->6
+SHAPES SIZE --->7
+SHAPES SIZE --->8
+SHAPES SIZE --->9
+SHAPES SIZE --->10
+SHAPES SIZE --->11
+SHAPES SIZE --->12
+SHAPES SIZE --->13
+SHAPES SIZE --->14
+SHAPES SIZE --->15
+SHAPES SIZE --->16
+SHAPES SIZE --->17
+SHAPES SIZE --->18
+SHAPES SIZE --->19
+SHAPES SIZE --->20
+SHAPES SIZE --->21
+SHAPES SIZE --->22
+SHAPES SIZE --->23
+SHAPES SIZE --->24
+SHAPES SIZE --->25
+SHAPES SIZE --->26
+SHAPES SIZE --->27
+SHAPES SIZE --->28
+SHAPES SIZE --->29
+SHAPES SIZE --->30
+SHAPES SIZE --->31
+SHAPES SIZE --->32
+SHAPES SIZE --->33
+SHAPES SIZE --->34
+SHAPES SIZE --->35
+SHAPES SIZE --->36
+SHAPES SIZE --->37
+SHAPES SIZE --->38
+SHAPES SIZE --->39
+SHAPES SIZE --->40
+SHAPES SIZE --->41
+SHAPES SIZE --->42
+SHAPES SIZE --->43
+SHAPES SIZE --->44
+SHAPES SIZE --->45
+SHAPES SIZE --->46
+SHAPES SIZE --->47
+SHAPES SIZE --->48
+SHAPES SIZE --->49
+SHAPES SIZE --->50
+SHAPES SIZE --->51
+SHAPES SIZE --->52
+SHAPES SIZE --->53
+SHAPES SIZE --->54
+SHAPES SIZE --->55
+SHAPES SIZE --->56
+SHAPES SIZE --->57
+SHAPES SIZE --->58
+SHAPES SIZE --->59
+SHAPES SIZE --->60
+SHAPES SIZE --->61
+SHAPES SIZE --->62
+SHAPES SIZE --->63
+SHAPES SIZE --->64
+SHAPES SIZE --->65
+SHAPES SIZE --->66
+SHAPES SIZE --->67
+SHAPES SIZE --->68
+SHAPES SIZE --->69
+SHAPES SIZE --->70
+SHAPES SIZE --->71
+SHAPES SIZE --->72
+SHAPES SIZE --->73
+SHAPES SIZE --->74
+SHAPES SIZE --->75
+SHAPES SIZE --->76
+SHAPES SIZE --->77
+SHAPES SIZE --->78
+SHAPES SIZE --->79
+SHAPES SIZE --->80
+SHAPES SIZE --->81
+SHAPES SIZE --->82
+SHAPES SIZE --->83
+SHAPES SIZE --->84
+SHAPES SIZE --->85
+SHAPES SIZE --->86
+SHAPES SIZE --->87
+SHAPES SIZE --->88
+SHAPES SIZE --->89
+SHAPES SIZE --->90
+SHAPES SIZE --->91
+SHAPES SIZE --->92
+SHAPES SIZE --->93
+SHAPES SIZE --->94
+SHAPES SIZE --->95
+SHAPES SIZE --->96
+SHAPES SIZE --->97
+SHAPES SIZE --->98
+SHAPES SIZE --->99
+SHAPES SIZE --->100
+SHAPES SIZE --->101
+SHAPES SIZE --->102
+SHAPES SIZE --->103
+SHAPES SIZE --->104
+SHAPES SIZE --->105
+SHAPES SIZE --->106
+SHAPES SIZE --->107
+SHAPES SIZE --->108
+SHAPES SIZE --->109
+SHAPES SIZE --->110
+SHAPES SIZE --->111
+SHAPES SIZE --->112
+SHAPES SIZE --->113
+SHAPES SIZE --->114
+SHAPES SIZE --->115
+SHAPES SIZE --->116
+SHAPES SIZE --->117
+SHAPES SIZE --->118
+SHAPES SIZE --->119
+SHAPES SIZE --->120
+SHAPES SIZE --->121
+SHAPES SIZE --->122
+SHAPES SIZE --->123
+SHAPES SIZE --->124
+SHAPES SIZE --->125
+SHAPES SIZE --->126
+SHAPES SIZE --->127
+SHAPES SIZE --->128
+SHAPES SIZE --->129
+SHAPES SIZE --->130
+SHAPES SIZE --->131
+SHAPES SIZE --->132
+SHAPES SIZE --->133
+SHAPES SIZE --->134
+SHAPES SIZE --->135
+SHAPES SIZE --->136
+SHAPES SIZE --->137
+SHAPES SIZE --->138
+SHAPES SIZE --->139
+SHAPES SIZE --->140
+SHAPES SIZE --->141
+SHAPES SIZE --->142
+SHAPES SIZE --->143
+SHAPES SIZE --->144
+SHAPES SIZE --->145
+SHAPES SIZE --->146
+SHAPES SIZE --->147
+SHAPES SIZE --->148
+SHAPES SIZE --->149
+SHAPES SIZE --->150
+SHAPES SIZE --->151
+SHAPES SIZE --->152
+SHAPES SIZE --->153
+SHAPES SIZE --->154
+SHAPES SIZE --->155
+SHAPES SIZE --->156
+SHAPES SIZE --->157
+SHAPES SIZE --->158
+SHAPES SIZE --->159
+SHAPES SIZE --->160
+SHAPES SIZE --->161
+SHAPES SIZE --->162
+SHAPES SIZE --->163
+SHAPES SIZE --->164
+SHAPES SIZE --->165
+SHAPES SIZE --->166
+SHAPES SIZE --->167
+SHAPES SIZE --->168
+SHAPES SIZE --->169
+SHAPES SIZE --->170
+SHAPES SIZE --->171
+SHAPES SIZE --->172
+SHAPES SIZE --->173
+SHAPES SIZE --->174
+SHAPES SIZE --->175
+SHAPES SIZE --->176
+SHAPES SIZE --->177
+SHAPES SIZE --->178
+SHAPES SIZE --->179
+SHAPES SIZE --->180
+SHAPES SIZE --->181
+SHAPES SIZE --->182
+SHAPES SIZE --->183
+SHAPES SIZE --->184
+SHAPES SIZE --->185
+SHAPES SIZE --->186
+SHAPES SIZE --->187
+SHAPES SIZE --->188
+SHAPES SIZE --->189
+SHAPES SIZE --->190
+SHAPES SIZE --->191
+SHAPES SIZE --->192
+SHAPES SIZE --->193
+SHAPES SIZE --->194
+SHAPES SIZE --->195
+SHAPES SIZE --->196
+SHAPES SIZE --->197
+SHAPES SIZE --->198
+SHAPES SIZE --->199
+SHAPES SIZE --->200
+SHAPES SIZE --->201
+SHAPES SIZE --->202
+SHAPES SIZE --->203
+SHAPES SIZE --->204
+SHAPES SIZE --->205
+SHAPES SIZE --->206
+SHAPES SIZE --->207
+SHAPES SIZE --->208
+SHAPES SIZE --->209
+SHAPES SIZE --->210
+SHAPES SIZE --->211
+SHAPES SIZE --->212
+SHAPES SIZE --->213
+SHAPES SIZE --->214
+SHAPES SIZE --->215
+SHAPES SIZE --->216
+SHAPES SIZE --->217
+SHAPES SIZE --->218
+SHAPES SIZE --->219
+SHAPES SIZE --->220
+SHAPES SIZE --->221
+SHAPES SIZE --->222
+SHAPES SIZE --->223
+SHAPES SIZE --->224
+SHAPES SIZE --->225
+SHAPES SIZE --->226
+SHAPES SIZE --->227
+SHAPES SIZE --->228
+SHAPES SIZE --->229
+SHAPES SIZE --->230
+SHAPES SIZE --->231
+SHAPES SIZE --->232
+SHAPES SIZE --->233
+SHAPES SIZE --->234
+SHAPES SIZE --->235
+SHAPES SIZE --->236
+SHAPES SIZE --->237
+SHAPES SIZE --->238
+SHAPES SIZE --->239
+SHAPES SIZE --->240
+SHAPES SIZE --->241
+SHAPES SIZE --->242
+SHAPES SIZE --->243
+SHAPES SIZE --->244
+SHAPES SIZE --->245
+SHAPES SIZE --->246
+SHAPES SIZE --->247
+SHAPES SIZE --->248
+SHAPES SIZE --->249
+SHAPES SIZE --->250
+SHAPES SIZE --->251
+SHAPES SIZE --->252
+SHAPES SIZE --->253
+SHAPES SIZE --->254
+SHAPES SIZE --->255
+SHAPES SIZE --->256
+SHAPES SIZE --->257
+SHAPES SIZE --->258
+SHAPES SIZE --->259
+SHAPES SIZE --->260
+SHAPES SIZE --->261
+SHAPES SIZE --->262
+SHAPES SIZE --->263
+SHAPES SIZE --->264
+SHAPES SIZE --->265
+SHAPES SIZE --->266
+SHAPES SIZE --->267
+SHAPES SIZE --->268
+SHAPES SIZE --->269
+SHAPES SIZE --->270
+SHAPES SIZE --->271
+SHAPES SIZE --->272
+SHAPES SIZE --->273
+SHAPES SIZE --->274
+SHAPES SIZE --->275
+SHAPES SIZE --->276
+SHAPES SIZE --->277
+SHAPES SIZE --->278
+SHAPES SIZE --->279
 >>>> [2] batman_2 <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->1
+SHAPES SIZE --->2
+SHAPES SIZE --->3
+SHAPES SIZE --->4
+SHAPES SIZE --->5
+SHAPES SIZE --->6
+SHAPES SIZE --->7
+SHAPES SIZE --->8
+SHAPES SIZE --->9
+SHAPES SIZE --->10
+SHAPES SIZE --->11
+SHAPES SIZE --->12
+SHAPES SIZE --->13
+SHAPES SIZE --->14
+SHAPES SIZE --->15
+SHAPES SIZE --->16
+SHAPES SIZE --->17
+SHAPES SIZE --->18
+SHAPES SIZE --->19
+SHAPES SIZE --->20
+SHAPES SIZE --->21
+SHAPES SIZE --->22
+SHAPES SIZE --->23
+SHAPES SIZE --->24
+SHAPES SIZE --->25
+SHAPES SIZE --->26
+SHAPES SIZE --->27
+SHAPES SIZE --->28
+SHAPES SIZE --->29
+SHAPES SIZE --->30
+SHAPES SIZE --->31
+SHAPES SIZE --->32
+SHAPES SIZE --->33
+SHAPES SIZE --->34
+SHAPES SIZE --->35
+SHAPES SIZE --->36
+SHAPES SIZE --->37
+SHAPES SIZE --->38
+SHAPES SIZE --->39
+SHAPES SIZE --->40
+SHAPES SIZE --->41
+SHAPES SIZE --->42
+SHAPES SIZE --->43
+SHAPES SIZE --->44
+SHAPES SIZE --->45
+SHAPES SIZE --->46
+SHAPES SIZE --->47
+SHAPES SIZE --->48
+SHAPES SIZE --->49
+SHAPES SIZE --->50
+SHAPES SIZE --->51
+SHAPES SIZE --->52
+SHAPES SIZE --->53
+SHAPES SIZE --->54
+SHAPES SIZE --->55
+SHAPES SIZE --->56
+SHAPES SIZE --->57
+SHAPES SIZE --->58
+SHAPES SIZE --->59
+SHAPES SIZE --->60
+SHAPES SIZE --->61
+SHAPES SIZE --->62
+SHAPES SIZE --->63
+SHAPES SIZE --->64
+SHAPES SIZE --->65
+SHAPES SIZE --->66
+SHAPES SIZE --->67
+SHAPES SIZE --->68
+SHAPES SIZE --->69
+SHAPES SIZE --->70
+SHAPES SIZE --->71
+SHAPES SIZE --->72
+SHAPES SIZE --->73
+SHAPES SIZE --->74
+SHAPES SIZE --->75
+SHAPES SIZE --->76
+SHAPES SIZE --->77
+SHAPES SIZE --->78
+SHAPES SIZE --->79
+SHAPES SIZE --->80
+SHAPES SIZE --->81
+SHAPES SIZE --->82
+SHAPES SIZE --->83
+SHAPES SIZE --->84
+SHAPES SIZE --->85
+SHAPES SIZE --->86
+SHAPES SIZE --->87
+SHAPES SIZE --->88
+SHAPES SIZE --->89
+SHAPES SIZE --->90
+SHAPES SIZE --->91
+SHAPES SIZE --->92
+SHAPES SIZE --->93
+SHAPES SIZE --->94
+SHAPES SIZE --->95
+SHAPES SIZE --->96
+SHAPES SIZE --->97
+SHAPES SIZE --->98
+SHAPES SIZE --->99
+SHAPES SIZE --->100
+SHAPES SIZE --->101
+SHAPES SIZE --->102
+SHAPES SIZE --->103
+SHAPES SIZE --->104
+SHAPES SIZE --->105
+SHAPES SIZE --->106
+SHAPES SIZE --->107
+SHAPES SIZE --->108
+SHAPES SIZE --->109
+SHAPES SIZE --->110
+SHAPES SIZE --->111
+SHAPES SIZE --->112
+SHAPES SIZE --->113
+SHAPES SIZE --->114
+SHAPES SIZE --->115
+SHAPES SIZE --->116
+SHAPES SIZE --->117
+SHAPES SIZE --->118
+SHAPES SIZE --->119
+SHAPES SIZE --->120
+SHAPES SIZE --->121
+SHAPES SIZE --->122
+SHAPES SIZE --->123
+SHAPES SIZE --->124
+SHAPES SIZE --->125
+SHAPES SIZE --->126
+SHAPES SIZE --->127
+SHAPES SIZE --->128
+SHAPES SIZE --->129
+SHAPES SIZE --->130
+SHAPES SIZE --->131
+SHAPES SIZE --->132
+SHAPES SIZE --->133
+SHAPES SIZE --->134
+SHAPES SIZE --->135
+SHAPES SIZE --->136
+SHAPES SIZE --->137
+SHAPES SIZE --->138
+SHAPES SIZE --->139
+SHAPES SIZE --->140
+SHAPES SIZE --->141
+SHAPES SIZE --->142
+SHAPES SIZE --->143
+SHAPES SIZE --->144
+SHAPES SIZE --->145
+SHAPES SIZE --->146
+SHAPES SIZE --->147
+SHAPES SIZE --->148
+SHAPES SIZE --->149
+SHAPES SIZE --->150
+SHAPES SIZE --->151
+SHAPES SIZE --->152
+SHAPES SIZE --->153
+SHAPES SIZE --->154
+SHAPES SIZE --->155
+SHAPES SIZE --->156
+SHAPES SIZE --->157
+SHAPES SIZE --->158
+SHAPES SIZE --->159
+SHAPES SIZE --->160
+SHAPES SIZE --->161
+SHAPES SIZE --->162
+SHAPES SIZE --->163
+SHAPES SIZE --->164
+SHAPES SIZE --->165
+SHAPES SIZE --->166
+SHAPES SIZE --->167
+SHAPES SIZE --->168
+SHAPES SIZE --->169
+SHAPES SIZE --->170
+SHAPES SIZE --->171
+SHAPES SIZE --->172
+SHAPES SIZE --->173
+SHAPES SIZE --->174
+SHAPES SIZE --->175
+SHAPES SIZE --->176
+SHAPES SIZE --->177
+SHAPES SIZE --->178
+SHAPES SIZE --->179
+SHAPES SIZE --->180
+SHAPES SIZE --->181
+SHAPES SIZE --->182
+SHAPES SIZE --->183
+SHAPES SIZE --->184
+SHAPES SIZE --->185
+SHAPES SIZE --->186
+SHAPES SIZE --->187
+SHAPES SIZE --->188
+SHAPES SIZE --->189
+SHAPES SIZE --->190
+SHAPES SIZE --->191
+SHAPES SIZE --->192
+SHAPES SIZE --->193
+SHAPES SIZE --->194
+SHAPES SIZE --->195
+SHAPES SIZE --->196
+SHAPES SIZE --->197
+SHAPES SIZE --->198
+SHAPES SIZE --->199
+SHAPES SIZE --->200
+SHAPES SIZE --->201
+SHAPES SIZE --->202
+SHAPES SIZE --->203
+SHAPES SIZE --->204
+SHAPES SIZE --->205
+SHAPES SIZE --->206
+SHAPES SIZE --->207
+SHAPES SIZE --->208
+SHAPES SIZE --->209
+SHAPES SIZE --->210
+SHAPES SIZE --->211
+SHAPES SIZE --->212
+SHAPES SIZE --->213
+SHAPES SIZE --->214
+SHAPES SIZE --->215
+SHAPES SIZE --->216
+SHAPES SIZE --->217
+SHAPES SIZE --->218
+SHAPES SIZE --->219
+SHAPES SIZE --->220
+SHAPES SIZE --->221
+SHAPES SIZE --->222
+SHAPES SIZE --->223
+SHAPES SIZE --->224
+SHAPES SIZE --->225
+SHAPES SIZE --->226
+SHAPES SIZE --->227
+SHAPES SIZE --->228
+SHAPES SIZE --->229
+SHAPES SIZE --->230
+SHAPES SIZE --->231
+SHAPES SIZE --->232
+SHAPES SIZE --->233
+SHAPES SIZE --->234
+SHAPES SIZE --->235
+SHAPES SIZE --->236
+SHAPES SIZE --->237
+SHAPES SIZE --->238
+SHAPES SIZE --->239
+SHAPES SIZE --->240
+SHAPES SIZE --->241
+SHAPES SIZE --->242
+SHAPES SIZE --->243
+SHAPES SIZE --->244
+SHAPES SIZE --->245
+SHAPES SIZE --->246
+SHAPES SIZE --->247
+SHAPES SIZE --->248
+SHAPES SIZE --->249
+SHAPES SIZE --->250
+SHAPES SIZE --->251
+SHAPES SIZE --->252
+SHAPES SIZE --->253
+SHAPES SIZE --->254
+SHAPES SIZE --->255
+SHAPES SIZE --->256
+SHAPES SIZE --->257
+SHAPES SIZE --->258
+SHAPES SIZE --->259
+SHAPES SIZE --->260
+SHAPES SIZE --->261
+SHAPES SIZE --->262
+SHAPES SIZE --->263
+SHAPES SIZE --->264
+SHAPES SIZE --->265
+SHAPES SIZE --->266
+SHAPES SIZE --->267
+SHAPES SIZE --->268
+SHAPES SIZE --->269
+SHAPES SIZE --->270
+SHAPES SIZE --->271
+SHAPES SIZE --->272
+SHAPES SIZE --->273
+SHAPES SIZE --->274
+SHAPES SIZE --->275
+SHAPES SIZE --->276
+SHAPES SIZE --->277
+SHAPES SIZE --->278
+SHAPES SIZE --->279
+SHAPES SIZE --->280
 >>>> [3] blank_1 <<<<
 >>>> [4] blank_2 <<<<
 >>>> [5] circle_1 <<<<
+SHAPES SIZE --->0
 >>>> [6] circle_2 <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->1
+SHAPES SIZE --->2
+SHAPES SIZE --->3
+SHAPES SIZE --->4
+SHAPES SIZE --->5
+SHAPES SIZE --->6
+SHAPES SIZE --->7
 >>>> [7] ellipse_1 <<<<
+SHAPES SIZE --->0
 >>>> [8] ellipse_2 <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->1
+SHAPES SIZE --->2
+SHAPES SIZE --->3
+SHAPES SIZE --->4
+SHAPES SIZE --->5
 >>>> [9] group_1 <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->0
+SHAPES SIZE --->1
 >>>> [10] group_2 <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->0
+SHAPES SIZE --->1
 >>>> [11] group_3 <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->0
+SHAPES SIZE --->1
+SHAPES SIZE --->2
+SHAPES SIZE --->3
+SHAPES SIZE --->4
 >>>> [12] group_4 <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->0
+SHAPES SIZE --->0
+SHAPES SIZE --->1
+SHAPES SIZE --->2
+SHAPES SIZE --->3
+SHAPES SIZE --->1
 >>>> [13] group_5 <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->0
+SHAPES SIZE --->0
+SHAPES SIZE --->1
+SHAPES SIZE --->2
+SHAPES SIZE --->1
+SHAPES SIZE --->0
+SHAPES SIZE --->2
+SHAPES SIZE --->0
 >>>> [14] group_6 <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->0
+SHAPES SIZE --->1
+SHAPES SIZE --->0
+SHAPES SIZE --->2
+SHAPES SIZE --->0
+SHAPES SIZE --->0
+SHAPES SIZE --->1
 >>>> [15] group_7 <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->0
+SHAPES SIZE --->1
+SHAPES SIZE --->2
+SHAPES SIZE --->3
 >>>> [16] line_1 <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->1
+SHAPES SIZE --->2
 >>>> [17] line_2 <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->1
+SHAPES SIZE --->2
+SHAPES SIZE --->3
+SHAPES SIZE --->4
+SHAPES SIZE --->5
+SHAPES SIZE --->6
+SHAPES SIZE --->7
 >>>> [18] lion <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->1
+SHAPES SIZE --->2
+SHAPES SIZE --->3
+SHAPES SIZE --->4
+SHAPES SIZE --->5
+SHAPES SIZE --->6
+SHAPES SIZE --->7
+SHAPES SIZE --->8
+SHAPES SIZE --->9
+SHAPES SIZE --->10
+SHAPES SIZE --->11
+SHAPES SIZE --->12
+SHAPES SIZE --->13
+SHAPES SIZE --->14
+SHAPES SIZE --->15
+SHAPES SIZE --->16
+SHAPES SIZE --->17
+SHAPES SIZE --->18
+SHAPES SIZE --->19
+SHAPES SIZE --->20
+SHAPES SIZE --->21
+SHAPES SIZE --->22
+SHAPES SIZE --->23
+SHAPES SIZE --->24
+SHAPES SIZE --->25
+SHAPES SIZE --->26
+SHAPES SIZE --->27
+SHAPES SIZE --->28
+SHAPES SIZE --->29
+SHAPES SIZE --->30
+SHAPES SIZE --->31
+SHAPES SIZE --->32
+SHAPES SIZE --->33
+SHAPES SIZE --->34
+SHAPES SIZE --->35
+SHAPES SIZE --->36
+SHAPES SIZE --->37
+SHAPES SIZE --->38
+SHAPES SIZE --->39
+SHAPES SIZE --->40
+SHAPES SIZE --->41
+SHAPES SIZE --->42
+SHAPES SIZE --->43
+SHAPES SIZE --->44
+SHAPES SIZE --->45
+SHAPES SIZE --->46
+SHAPES SIZE --->47
+SHAPES SIZE --->48
+SHAPES SIZE --->49
+SHAPES SIZE --->50
+SHAPES SIZE --->51
+SHAPES SIZE --->52
+SHAPES SIZE --->53
+SHAPES SIZE --->54
+SHAPES SIZE --->55
+SHAPES SIZE --->56
+SHAPES SIZE --->57
+SHAPES SIZE --->58
+SHAPES SIZE --->59
+SHAPES SIZE --->60
+SHAPES SIZE --->61
+SHAPES SIZE --->62
+SHAPES SIZE --->63
+SHAPES SIZE --->64
+SHAPES SIZE --->65
+SHAPES SIZE --->66
+SHAPES SIZE --->67
+SHAPES SIZE --->68
+SHAPES SIZE --->69
+SHAPES SIZE --->70
+SHAPES SIZE --->71
+SHAPES SIZE --->72
+SHAPES SIZE --->73
+SHAPES SIZE --->74
+SHAPES SIZE --->75
+SHAPES SIZE --->76
+SHAPES SIZE --->77
+SHAPES SIZE --->78
+SHAPES SIZE --->79
+SHAPES SIZE --->80
+SHAPES SIZE --->81
+SHAPES SIZE --->82
+SHAPES SIZE --->83
+SHAPES SIZE --->84
+SHAPES SIZE --->85
+SHAPES SIZE --->86
+SHAPES SIZE --->87
+SHAPES SIZE --->88
+SHAPES SIZE --->89
+SHAPES SIZE --->90
+SHAPES SIZE --->91
+SHAPES SIZE --->92
+SHAPES SIZE --->93
+SHAPES SIZE --->94
+SHAPES SIZE --->95
+SHAPES SIZE --->96
+SHAPES SIZE --->97
+SHAPES SIZE --->98
+SHAPES SIZE --->99
+SHAPES SIZE --->100
+SHAPES SIZE --->101
+SHAPES SIZE --->102
+SHAPES SIZE --->103
+SHAPES SIZE --->104
+SHAPES SIZE --->105
+SHAPES SIZE --->106
+SHAPES SIZE --->107
+SHAPES SIZE --->108
+SHAPES SIZE --->109
+SHAPES SIZE --->110
+SHAPES SIZE --->111
+SHAPES SIZE --->112
+SHAPES SIZE --->113
+SHAPES SIZE --->114
+SHAPES SIZE --->115
+SHAPES SIZE --->116
+SHAPES SIZE --->117
+SHAPES SIZE --->118
+SHAPES SIZE --->119
+SHAPES SIZE --->120
+SHAPES SIZE --->121
+SHAPES SIZE --->122
+SHAPES SIZE --->123
+SHAPES SIZE --->124
+SHAPES SIZE --->125
+SHAPES SIZE --->126
+SHAPES SIZE --->127
+SHAPES SIZE --->128
+SHAPES SIZE --->129
+SHAPES SIZE --->130
+SHAPES SIZE --->131
+SHAPES SIZE --->132
+SHAPES SIZE --->133
+SHAPES SIZE --->134
+SHAPES SIZE --->135
+SHAPES SIZE --->136
+SHAPES SIZE --->137
+SHAPES SIZE --->138
+SHAPES SIZE --->139
+SHAPES SIZE --->140
+SHAPES SIZE --->141
+SHAPES SIZE --->142
+SHAPES SIZE --->143
+SHAPES SIZE --->144
+SHAPES SIZE --->145
+SHAPES SIZE --->146
+SHAPES SIZE --->147
+SHAPES SIZE --->148
+SHAPES SIZE --->149
+SHAPES SIZE --->150
+SHAPES SIZE --->151
+SHAPES SIZE --->152
+SHAPES SIZE --->153
+SHAPES SIZE --->154
+SHAPES SIZE --->155
+SHAPES SIZE --->156
+SHAPES SIZE --->157
+SHAPES SIZE --->158
+SHAPES SIZE --->159
+SHAPES SIZE --->160
+SHAPES SIZE --->161
+SHAPES SIZE --->162
+SHAPES SIZE --->163
+SHAPES SIZE --->164
+SHAPES SIZE --->165
+SHAPES SIZE --->166
+SHAPES SIZE --->167
+SHAPES SIZE --->168
+SHAPES SIZE --->169
+SHAPES SIZE --->170
+SHAPES SIZE --->171
+SHAPES SIZE --->172
+SHAPES SIZE --->173
+SHAPES SIZE --->174
+SHAPES SIZE --->175
+SHAPES SIZE --->176
+SHAPES SIZE --->177
+SHAPES SIZE --->178
+SHAPES SIZE --->179
+SHAPES SIZE --->180
+SHAPES SIZE --->181
+SHAPES SIZE --->182
+SHAPES SIZE --->183
+SHAPES SIZE --->184
+SHAPES SIZE --->185
+SHAPES SIZE --->186
+SHAPES SIZE --->187
+SHAPES SIZE --->188
+SHAPES SIZE --->189
+SHAPES SIZE --->190
+SHAPES SIZE --->191
+SHAPES SIZE --->192
+SHAPES SIZE --->193
+SHAPES SIZE --->194
+SHAPES SIZE --->195
+SHAPES SIZE --->196
+SHAPES SIZE --->197
+SHAPES SIZE --->198
+SHAPES SIZE --->199
+SHAPES SIZE --->200
+SHAPES SIZE --->201
+SHAPES SIZE --->202
+SHAPES SIZE --->203
+SHAPES SIZE --->204
+SHAPES SIZE --->205
+SHAPES SIZE --->206
+SHAPES SIZE --->207
+SHAPES SIZE --->208
+SHAPES SIZE --->209
+SHAPES SIZE --->210
+SHAPES SIZE --->211
+SHAPES SIZE --->212
+SHAPES SIZE --->213
+SHAPES SIZE --->214
+SHAPES SIZE --->215
+SHAPES SIZE --->216
+SHAPES SIZE --->217
+SHAPES SIZE --->218
+SHAPES SIZE --->219
+SHAPES SIZE --->220
+SHAPES SIZE --->221
+SHAPES SIZE --->222
+SHAPES SIZE --->223
+SHAPES SIZE --->224
+SHAPES SIZE --->225
+SHAPES SIZE --->226
+SHAPES SIZE --->227
+SHAPES SIZE --->228
+SHAPES SIZE --->229
+SHAPES SIZE --->230
+SHAPES SIZE --->231
+SHAPES SIZE --->232
+SHAPES SIZE --->233
+SHAPES SIZE --->234
+SHAPES SIZE --->235
+SHAPES SIZE --->236
+SHAPES SIZE --->237
+SHAPES SIZE --->238
+SHAPES SIZE --->239
+SHAPES SIZE --->240
+SHAPES SIZE --->241
+SHAPES SIZE --->242
+SHAPES SIZE --->243
 >>>> [19] polygon_1 <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->1
 >>>> [20] polygon_2 <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->1
 >>>> [21] polyline_1 <<<<
+SHAPES SIZE --->0
 >>>> [22] polyline_2 <<<<
+SHAPES SIZE --->0
 >>>> [23] polyline_3 <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->1
+SHAPES SIZE --->2
+SHAPES SIZE --->3
+SHAPES SIZE --->4
+SHAPES SIZE --->5
+SHAPES SIZE --->6
+SHAPES SIZE --->7
+SHAPES SIZE --->8
+SHAPES SIZE --->9
+SHAPES SIZE --->10
+SHAPES SIZE --->11
+SHAPES SIZE --->12
+SHAPES SIZE --->13
+SHAPES SIZE --->14
+SHAPES SIZE --->15
+SHAPES SIZE --->16
+SHAPES SIZE --->17
+SHAPES SIZE --->18
+SHAPES SIZE --->19
+SHAPES SIZE --->20
+SHAPES SIZE --->21
+SHAPES SIZE --->22
+SHAPES SIZE --->23
+SHAPES SIZE --->24
+SHAPES SIZE --->25
+SHAPES SIZE --->26
+SHAPES SIZE --->27
+SHAPES SIZE --->28
+SHAPES SIZE --->29
+SHAPES SIZE --->30
+SHAPES SIZE --->31
+SHAPES SIZE --->32
+SHAPES SIZE --->33
+SHAPES SIZE --->34
+SHAPES SIZE --->35
+SHAPES SIZE --->36
+SHAPES SIZE --->37
+SHAPES SIZE --->38
+SHAPES SIZE --->39
+SHAPES SIZE --->40
+SHAPES SIZE --->41
+SHAPES SIZE --->42
+SHAPES SIZE --->43
+SHAPES SIZE --->44
+SHAPES SIZE --->45
+SHAPES SIZE --->46
+SHAPES SIZE --->47
+SHAPES SIZE --->48
+SHAPES SIZE --->49
+SHAPES SIZE --->50
+SHAPES SIZE --->51
+SHAPES SIZE --->52
+SHAPES SIZE --->53
+SHAPES SIZE --->54
+SHAPES SIZE --->55
+SHAPES SIZE --->56
+SHAPES SIZE --->57
+SHAPES SIZE --->58
+SHAPES SIZE --->59
+SHAPES SIZE --->60
+SHAPES SIZE --->61
+SHAPES SIZE --->62
+SHAPES SIZE --->63
+SHAPES SIZE --->64
+SHAPES SIZE --->65
+SHAPES SIZE --->66
+SHAPES SIZE --->67
+SHAPES SIZE --->68
+SHAPES SIZE --->69
+SHAPES SIZE --->70
+SHAPES SIZE --->71
+SHAPES SIZE --->72
+SHAPES SIZE --->73
+SHAPES SIZE --->74
+SHAPES SIZE --->75
+SHAPES SIZE --->76
+SHAPES SIZE --->77
+SHAPES SIZE --->78
+SHAPES SIZE --->79
+SHAPES SIZE --->80
+SHAPES SIZE --->81
+SHAPES SIZE --->82
+SHAPES SIZE --->83
+SHAPES SIZE --->84
+SHAPES SIZE --->85
+SHAPES SIZE --->86
+SHAPES SIZE --->87
+SHAPES SIZE --->88
+SHAPES SIZE --->89
+SHAPES SIZE --->90
+SHAPES SIZE --->91
+SHAPES SIZE --->92
+SHAPES SIZE --->93
+SHAPES SIZE --->94
+SHAPES SIZE --->95
+SHAPES SIZE --->96
+SHAPES SIZE --->97
+SHAPES SIZE --->98
+SHAPES SIZE --->99
+SHAPES SIZE --->100
+SHAPES SIZE --->101
+SHAPES SIZE --->102
+SHAPES SIZE --->103
+SHAPES SIZE --->104
+SHAPES SIZE --->105
+SHAPES SIZE --->106
+SHAPES SIZE --->107
+SHAPES SIZE --->108
+SHAPES SIZE --->109
+SHAPES SIZE --->110
+SHAPES SIZE --->111
+SHAPES SIZE --->112
+SHAPES SIZE --->113
+SHAPES SIZE --->114
+SHAPES SIZE --->115
+SHAPES SIZE --->116
+SHAPES SIZE --->117
+SHAPES SIZE --->118
+SHAPES SIZE --->119
+SHAPES SIZE --->120
+SHAPES SIZE --->121
+SHAPES SIZE --->122
+SHAPES SIZE --->123
+SHAPES SIZE --->124
+SHAPES SIZE --->125
+SHAPES SIZE --->126
+SHAPES SIZE --->127
+SHAPES SIZE --->128
+SHAPES SIZE --->129
+SHAPES SIZE --->130
+SHAPES SIZE --->131
+SHAPES SIZE --->132
+SHAPES SIZE --->133
+SHAPES SIZE --->134
+SHAPES SIZE --->135
+SHAPES SIZE --->136
+SHAPES SIZE --->137
+SHAPES SIZE --->138
+SHAPES SIZE --->139
+SHAPES SIZE --->140
+SHAPES SIZE --->141
+SHAPES SIZE --->142
+SHAPES SIZE --->143
+SHAPES SIZE --->144
+SHAPES SIZE --->145
+SHAPES SIZE --->146
+SHAPES SIZE --->147
+SHAPES SIZE --->148
+SHAPES SIZE --->149
+SHAPES SIZE --->150
+SHAPES SIZE --->151
+SHAPES SIZE --->152
+SHAPES SIZE --->153
+SHAPES SIZE --->154
+SHAPES SIZE --->155
+SHAPES SIZE --->156
+SHAPES SIZE --->157
+SHAPES SIZE --->158
+SHAPES SIZE --->159
+SHAPES SIZE --->160
+SHAPES SIZE --->161
+SHAPES SIZE --->162
+SHAPES SIZE --->163
+SHAPES SIZE --->164
+SHAPES SIZE --->165
+SHAPES SIZE --->166
+SHAPES SIZE --->167
+SHAPES SIZE --->168
+SHAPES SIZE --->169
+SHAPES SIZE --->170
+SHAPES SIZE --->171
+SHAPES SIZE --->172
+SHAPES SIZE --->173
+SHAPES SIZE --->174
+SHAPES SIZE --->175
+SHAPES SIZE --->176
+SHAPES SIZE --->177
+SHAPES SIZE --->178
+SHAPES SIZE --->179
+SHAPES SIZE --->180
+SHAPES SIZE --->181
+SHAPES SIZE --->182
+SHAPES SIZE --->183
+SHAPES SIZE --->184
+SHAPES SIZE --->185
+SHAPES SIZE --->186
+SHAPES SIZE --->187
+SHAPES SIZE --->188
+SHAPES SIZE --->189
+SHAPES SIZE --->190
+SHAPES SIZE --->191
+SHAPES SIZE --->192
+SHAPES SIZE --->193
+SHAPES SIZE --->194
+SHAPES SIZE --->195
+SHAPES SIZE --->196
+SHAPES SIZE --->197
+SHAPES SIZE --->198
+SHAPES SIZE --->199
+SHAPES SIZE --->200
+SHAPES SIZE --->201
+SHAPES SIZE --->202
+SHAPES SIZE --->203
+SHAPES SIZE --->204
+SHAPES SIZE --->205
+SHAPES SIZE --->206
+SHAPES SIZE --->207
+SHAPES SIZE --->208
+SHAPES SIZE --->209
+SHAPES SIZE --->210
+SHAPES SIZE --->211
+SHAPES SIZE --->212
+SHAPES SIZE --->213
+SHAPES SIZE --->214
+SHAPES SIZE --->215
+SHAPES SIZE --->216
+SHAPES SIZE --->217
+SHAPES SIZE --->218
+SHAPES SIZE --->219
+SHAPES SIZE --->220
+SHAPES SIZE --->221
+SHAPES SIZE --->222
+SHAPES SIZE --->223
+SHAPES SIZE --->224
+SHAPES SIZE --->225
+SHAPES SIZE --->226
+SHAPES SIZE --->227
+SHAPES SIZE --->228
+SHAPES SIZE --->229
+SHAPES SIZE --->230
+SHAPES SIZE --->231
+SHAPES SIZE --->232
+SHAPES SIZE --->233
+SHAPES SIZE --->234
+SHAPES SIZE --->235
+SHAPES SIZE --->236
+SHAPES SIZE --->237
+SHAPES SIZE --->238
+SHAPES SIZE --->239
+SHAPES SIZE --->240
+SHAPES SIZE --->241
+SHAPES SIZE --->242
 >>>> [24] rect_1 <<<<
+SHAPES SIZE --->0
 >>>> [25] rect_2 <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->1
+SHAPES SIZE --->2
+SHAPES SIZE --->3
+SHAPES SIZE --->4
+SHAPES SIZE --->5
 >>>> [26] rect_3 <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->1
+SHAPES SIZE --->2
+SHAPES SIZE --->3
+SHAPES SIZE --->4
+SHAPES SIZE --->5
+SHAPES SIZE --->6
+SHAPES SIZE --->7
+SHAPES SIZE --->8
+SHAPES SIZE --->9
 >>>> [27] rotate_circle <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->1
+SHAPES SIZE --->2
+SHAPES SIZE --->3
 >>>> [28] rotate_circle_with_origin <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->1
+SHAPES SIZE --->2
+SHAPES SIZE --->3
+SHAPES SIZE --->4
+SHAPES SIZE --->5
+SHAPES SIZE --->6
 >>>> [29] rotate_line <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->1
+SHAPES SIZE --->2
+SHAPES SIZE --->3
+SHAPES SIZE --->4
 >>>> [30] rotate_line_with_origin <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->1
+SHAPES SIZE --->2
+SHAPES SIZE --->3
 >>>> [31] rotate_polygon <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->1
+SHAPES SIZE --->2
 >>>> [32] rotate_polygon_with_origin <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->1
+SHAPES SIZE --->2
+SHAPES SIZE --->3
+SHAPES SIZE --->4
 >>>> [33] rotate_polyline <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->1
+SHAPES SIZE --->2
 >>>> [34] rotate_polyline_with_origin <<<<
+SHAPES SIZE --->0
 >>>> [35] rotate_rect <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->1
+SHAPES SIZE --->2
 >>>> [36] rotate_rect_with_origin <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->1
+SHAPES SIZE --->2
 >>>> [37] scale_circle <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->1
+SHAPES SIZE --->2
+SHAPES SIZE --->3
 >>>> [38] scale_circle_with_origin <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->1
+SHAPES SIZE --->2
+SHAPES SIZE --->3
+SHAPES SIZE --->4
 >>>> [39] scale_ellipse <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->1
+SHAPES SIZE --->2
+SHAPES SIZE --->3
 >>>> [40] scale_ellipse_with_origin <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->1
+SHAPES SIZE --->2
+SHAPES SIZE --->3
+SHAPES SIZE --->4
 >>>> [41] scale_line <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->1
+SHAPES SIZE --->2
 >>>> [42] scale_line_with_origin <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->1
+SHAPES SIZE --->2
 >>>> [43] scale_polygon <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->1
+SHAPES SIZE --->2
 >>>> [44] scale_polygon_with_origin <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->1
+SHAPES SIZE --->2
 >>>> [45] scale_polyline <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->1
+SHAPES SIZE --->2
 >>>> [46] scale_polyline_with_origin <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->1
+SHAPES SIZE --->2
 >>>> [47] scale_rect <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->1
+SHAPES SIZE --->2
+SHAPES SIZE --->3
 >>>> [48] scale_rect_with_origin <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->1
+SHAPES SIZE --->2
 >>>> [49] transform_several <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->1
+SHAPES SIZE --->2
+SHAPES SIZE --->3
+SHAPES SIZE --->4
+SHAPES SIZE --->5
 >>>> [50] translate_circle <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->1
+SHAPES SIZE --->2
+SHAPES SIZE --->3
 >>>> [51] translate_ellipse <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->1
+SHAPES SIZE --->2
+SHAPES SIZE --->3
 >>>> [52] translate_line <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->1
+SHAPES SIZE --->2
+SHAPES SIZE --->3
 >>>> [53] translate_polygon <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->1
+SHAPES SIZE --->2
+SHAPES SIZE --->3
+SHAPES SIZE --->4
+SHAPES SIZE --->5
+SHAPES SIZE --->6
+SHAPES SIZE --->7
+SHAPES SIZE --->8
 >>>> [54] translate_polyline <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->1
+SHAPES SIZE --->2
+SHAPES SIZE --->3
 >>>> [55] translate_rect <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->1
+SHAPES SIZE --->2
+SHAPES SIZE --->3
 >>>> [56] use_1 <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->2
+SHAPES SIZE --->3
 >>>> [57] use_2 <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->1
+SHAPES SIZE --->3
+SHAPES SIZE --->4
+SHAPES SIZE --->5
 >>>> [58] use_3 <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->0
+SHAPES SIZE --->1
+SHAPES SIZE --->2
+SHAPES SIZE --->3
+SHAPES SIZE --->4
+SHAPES SIZE --->2
+SHAPES SIZE --->3
+SHAPES SIZE --->4
 test: PNGImage.cpp:63: svg::Color& svg::PNGImage::at(int, int): Assertion `y >= 0 && y < height_' failed.
 >>>> [59] use_4 <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->0
+SHAPES SIZE --->1
+SHAPES SIZE --->2
+SHAPES SIZE --->3
+SHAPES SIZE --->4
+SHAPES SIZE --->2
+SHAPES SIZE --->3
+SHAPES SIZE --->4
 test: PNGImage.cpp:62: svg::Color& svg::PNGImage::at(int, int): Assertion `x >= 0 && x < width_' failed.
 >>>> [60] use_5 <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->0
+SHAPES SIZE --->1
+SHAPES SIZE --->2
+SHAPES SIZE --->1
+SHAPES SIZE --->1
+SHAPES SIZE --->2
+SHAPES SIZE --->1
 =================================================================
-==13213==ERROR: AddressSanitizer: heap-use-after-free on address 0x6070000003a0 at pc 0x5a9a5c3f4667 bp 0x7fffab1ef850 sp 0x7fffab1ef840
+==4277==ERROR: AddressSanitizer: heap-use-after-free on address 0x6070000003a0 at pc 0x5fee0f7b74d5 bp 0x7fffd7d725b0 sp 0x7fffd7d725a0
 READ of size 8 at 0x6070000003a0 thread T0
-    #0 0x5a9a5c3f4666 in svg::Group::~Group() /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:15
-    #1 0x5a9a5c3f4a25 in svg::Group::~Group() /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:17
-    #2 0x5a9a5c3f478b in svg::Group::~Group() /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:15
-    #3 0x5a9a5c3f4a25 in svg::Group::~Group() /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:17
-    #4 0x5a9a5c3f1c40 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:20
-    #5 0x5a9a5c3927f3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1647f3)
-    #6 0x5a9a5c394927 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x166927)
-    #7 0x5a9a5c395f92 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x167f92)
-    #8 0x5a9a5c391975 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
-    #9 0x7222cf829d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
-    #10 0x7222cf829e3f in __libc_start_main_impl ../csu/libc-start.c:392
-    #11 0x5a9a5c391534 in _start (/home/mariajvieira/Desktop/prog/project/test+0x163534)
+    #0 0x5fee0f7b74d4 in svg::Group::~Group() /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:15
+    #1 0x5fee0f7b7893 in svg::Group::~Group() /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:17
+    #2 0x5fee0f7b75f9 in svg::Group::~Group() /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:15
+    #3 0x5fee0f7b7893 in svg::Group::~Group() /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:17
+    #4 0x5fee0f7b4c40 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:20
+    #5 0x5fee0f7557f3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1647f3)
+    #6 0x5fee0f757927 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x166927)
+    #7 0x5fee0f758f92 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x167f92)
+    #8 0x5fee0f754975 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #9 0x7d641d829d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #10 0x7d641d829e3f in __libc_start_main_impl ../csu/libc-start.c:392
+    #11 0x5fee0f754534 in _start (/home/mariajvieira/Desktop/prog/project/test+0x163534)
 
 0x6070000003a0 is located 0 bytes inside of 72-byte region [0x6070000003a0,0x6070000003e8)
 freed by thread T0 here:
-    #0 0x7222d08b6d07 in operator delete(void*) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:160
-    #1 0x5a9a5c3fd375 in svg::Line::~Line() /home/mariajvieira/Desktop/prog/project/SVGElements.hpp:110
-    #2 0x5a9a5c3f478b in svg::Group::~Group() /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:15
-    #3 0x5a9a5c3f4a25 in svg::Group::~Group() /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:17
-    #4 0x5a9a5c3f1c40 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:20
-    #5 0x5a9a5c3927f3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1647f3)
-    #6 0x5a9a5c394927 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x166927)
-    #7 0x5a9a5c395f92 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x167f92)
-    #8 0x5a9a5c391975 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
-    #9 0x7222cf829d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #0 0x7d641e8b6d07 in operator delete(void*) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:160
+    #1 0x5fee0f7bffcf in svg::Line::~Line() /home/mariajvieira/Desktop/prog/project/SVGElements.hpp:109
+    #2 0x5fee0f7b75f9 in svg::Group::~Group() /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:15
+    #3 0x5fee0f7b7893 in svg::Group::~Group() /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:17
+    #4 0x5fee0f7b4c40 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:20
+    #5 0x5fee0f7557f3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1647f3)
+    #6 0x5fee0f757927 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x166927)
+    #7 0x5fee0f758f92 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x167f92)
+    #8 0x5fee0f754975 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #9 0x7d641d829d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
 
 previously allocated by thread T0 here:
-    #0 0x7222d08b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
-    #1 0x5a9a5c40da49 in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, svg::SVGElement*, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, svg::SVGElement*> > >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:197
-    #2 0x5a9a5c40aa41 in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, svg::SVGElement*, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, svg::SVGElement*> > >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:112
-    #3 0x5a9a5c410d16 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:272
-    #4 0x5a9a5c3f1544 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
-    #5 0x5a9a5c3927f3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1647f3)
-    #6 0x5a9a5c394927 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x166927)
-    #7 0x5a9a5c395f92 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x167f92)
-    #8 0x5a9a5c391975 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
-    #9 0x7222cf829d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #0 0x7d641e8b61e7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5fee0f7d0913 in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, svg::SVGElement*, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, svg::SVGElement*> > >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:199
+    #2 0x5fee0f7cda19 in svg::readGroup(tinyxml2::XMLElement*, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, svg::SVGElement*, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, svg::SVGElement*> > >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:114
+    #3 0x5fee0f7d3b47 in svg::readSVG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, svg::Point&, std::vector<svg::SVGElement*, std::allocator<svg::SVGElement*> >&) /home/mariajvieira/Desktop/prog/project/readSVG.cpp:274
+    #4 0x5fee0f7b4544 in svg::convert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /home/mariajvieira/Desktop/prog/project/convert.cpp:11
+    #5 0x5fee0f7557f3 in svg::TestDriver::run_conversion_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x1647f3)
+    #6 0x5fee0f757927 in svg::TestDriver::run_test(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x166927)
+    #7 0x5fee0f758f92 in svg::TestDriver::run_tests(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/home/mariajvieira/Desktop/prog/project/test+0x167f92)
+    #8 0x5fee0f754975 in main /home/mariajvieira/Desktop/prog/project/test.cpp:181
+    #9 0x7d641d829d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
 
 SUMMARY: AddressSanitizer: heap-use-after-free /home/mariajvieira/Desktop/prog/project/SVGElements.cpp:15 in svg::Group::~Group()
 Shadow bytes around the buggy address:
@@ -134,6 +1423,19 @@ Shadow byte legend (one shadow byte represents 8 application bytes):
   Left alloca redzone:     ca
   Right alloca redzone:    cb
   Shadow gap:              cc
-==13213==ABORTING
+==4277==ABORTING
 >>>> [61] use_6 <<<<
+SHAPES SIZE --->0
+SHAPES SIZE --->0
+SHAPES SIZE --->0
+SHAPES SIZE --->0
+SHAPES SIZE --->1
+SHAPES SIZE --->2
+SHAPES SIZE --->3
+SHAPES SIZE --->1
+SHAPES SIZE --->0
+SHAPES SIZE --->0
+SHAPES SIZE --->0
+SHAPES SIZE --->0
+SHAPES SIZE --->1
 pixel (266 346): expected 0 0 255 got 255 255 255

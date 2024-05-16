@@ -65,7 +65,7 @@ namespace svg
     }
 
 
-    //TENTAR PERCEBER
+    // PERCEBER!!!!!!!!!!!!!!!
     void Ellipse::scale(int v,Point &t) {
         center = center.translate({-t.x, -t.y}).scale({0, 0}, v);
         center = center.translate(t);

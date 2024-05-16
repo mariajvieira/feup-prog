@@ -15,7 +15,7 @@ namespace svg
 
     public:
         SVGElement();
-        virtual ~SVGElement();
+        virtual ~SVGElement();  // destructor
         SVGElement(string id_);
         virtual void draw(PNGImage &img) const = 0;
         virtual void translate(const Point &t) = 0;
@@ -41,15 +41,15 @@ namespace svg
 
     class Group : public SVGElement {
     public:
-        Group(vector<SVGElement*> elements);
-        ~Group();
-        void addElement(SVGElement* e);
-        vector<SVGElement*> getElements();
+        Group(vector<SVGElement*> elements); //constructor
+        ~Group();                            //destructor
+        void addElement(SVGElement* e);     //function to add element to the vector elements
+        vector<SVGElement*> getElements();          //getter
         void draw(PNGImage &img) const override;
         void translate(const Point &t) override;
         void rotate(int degrees,Point &t) override;
         void scale(int v,Point &t) override;
-        Group* clone() const override;
+        Group* clone() const override;          //function that creates a copy of the group
 
     private:
         vector<SVGElement*> elements;
@@ -61,13 +61,13 @@ namespace svg
     class Ellipse : public SVGElement
     {
     public:
-        Ellipse(const Color &fill, const Point &center, const Point &radius);
-        ~Ellipse() {}
+        Ellipse(const Color &fill, const Point &center, const Point &radius);  //constructor
+        ~Ellipse() {}                               //destructor
         void draw(PNGImage &img) const override;
         void translate(const Point &t) override;
         void rotate(int degrees,Point &t) override;
         void scale(int v,Point &t) override;
-        Ellipse* clone() const override;
+        Ellipse* clone() const override;    //function that creates a copy of the element
 
     private:
         Color fill;
@@ -76,14 +76,14 @@ namespace svg
     };
 
 
-
+    //this class is a subclass of Ellipse
+    //therefore, it overrides some functions that don't need to be defined
     class Circle : public Ellipse
     {
     public:
-        Circle(const Color &fill, const Point &center, const int &radius);
-        ~Circle() {}
-        void draw(PNGImage &img) const override;
-        Circle* clone() const override;
+        Circle(const Color &fill, const Point &center, const int &radius);   //constructor
+        void draw(PNGImage &img) const override;                //destructor
+        Circle* clone() const override;     //function that creates a copy of the element
     };
 
 
@@ -96,13 +96,16 @@ namespace svg
         void translate(const Point &t) override;
         void rotate(int degrees, Point &t) override;
         void scale(int v,Point &t) override;
-        Polyline* clone() const override;
+        Polyline* clone() const override;     //function that creates a copy of the element
 
     private:
         std::vector<Point> points; 
         Color stroke;                             
     };
 
+
+    //this class is a subclass of Polyline
+    //therefore, it overrides some functions that don't need to be defined
     class Line : public Polyline 
     {
     public:
@@ -115,13 +118,13 @@ namespace svg
     {
 
     public:
-        Polygon(const std::vector<Point>& _points, Color _fill);
-        ~Polygon() {}
+        Polygon(const std::vector<Point>& _points, Color _fill);  //constructor
+        ~Polygon() {}                               //destructor
         void draw(PNGImage& img) const override;
         void translate(const Point &t) override;
         void rotate(int degrees,Point &t) override;
         void scale(int v,Point &t) override;
-        Polygon* clone() const override;
+        Polygon* clone() const override;      //function that creates a copy of the element
 
 
     private:
@@ -129,12 +132,15 @@ namespace svg
         Color fill; 
     };
 
+
+    //this class is a subclass of Polygon
+    //therefore, it overrides some functions that don't need to be defined
     class Rect : public Polygon 
     {
     public:
-        Rect(int _x, int _y, Color _fill, int _width, int _height);
+        Rect(int _x, int _y, Color _fill, int _width, int _height); //constructor
         ~Rect() {}
-        Rect* clone() const override;
+        Rect* clone() const override;       //function that creates a copy of the element
     };
 }
 

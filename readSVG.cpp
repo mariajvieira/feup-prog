@@ -103,6 +103,8 @@ namespace svg
                     }
                 }
             }
+            cout << "SHAPES SIZE --->" << shapes.size() << '\n';
+
 
             if (strcmp(element_name, "g") == 0) {
 
