@@ -11,6 +11,10 @@ using namespace tinyxml2;
 namespace svg
 {
 
+    /**
+     * 
+     * 
+    */
     void applyTransformation(SVGElement* element, const string& transform_attr, Point& transform_origin)
     {
             size_t open_p = transform_attr.find('(');

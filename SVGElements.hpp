@@ -68,7 +68,11 @@ namespace svg
 
 
 
-
+    /**
+     * Ellipse Class
+     * 
+     * This is the class for the Ellipse Elements.
+    */
     class Ellipse : public SVGElement
     {
     public:
@@ -87,8 +91,12 @@ namespace svg
     };
 
 
-    //this class is a subclass of Ellipse
-    //therefore, it overrides some functions that don't need to be defined
+    /**
+     * Ellipse Class
+     * 
+     * This is the class for the Circle Elements.
+     * This class is a subclass of Ellipse. Therefore, it overrides some functions that don't need to be defined
+    */
     class Circle : public Ellipse
     {
     public:
@@ -98,6 +106,11 @@ namespace svg
     };
 
 
+    /**
+     * Polyline Class
+     * 
+     * This is the class for the Polyline Elements.
+    */
     class Polyline : public SVGElement 
     {
     public:
@@ -115,8 +128,12 @@ namespace svg
     };
 
 
-    //this class is a subclass of Polyline
-    //therefore, it overrides some functions that don't need to be defined
+    /**
+     * Line Class
+     * 
+     * This is the class for the Line Elements.
+     * This class is a subclass of POlyline. Therefore, it overrides some functions that don't need to be defined
+    */
     class Line : public Polyline 
     {
     public:
@@ -125,6 +142,12 @@ namespace svg
         Line* clone() const override;
     };
 
+
+    /**
+     * Polygon Class
+     * 
+     * This is the class for the POlygon Elements.
+    */
     class Polygon : public SVGElement 
     {
 
@@ -144,8 +167,12 @@ namespace svg
     };
 
 
-    //this class is a subclass of Polygon
-    //therefore, it overrides some functions that don't need to be defined
+    /**
+     * Rect Class
+     * 
+     * This is the class for the Rect Elements.
+     * This class is a subclass of Polygon. Therefore, it overrides some functions that don't need to be defined
+    */
     class Rect : public Polygon 
     {
     public:
