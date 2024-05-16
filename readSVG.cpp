@@ -11,10 +11,7 @@ using namespace tinyxml2;
 namespace svg
 {
 
-    /**
-     * 
-     * 
-    */
+
     void applyTransformation(SVGElement* element, const string& transform_attr, Point& transform_origin)
     {
             size_t open_p = transform_attr.find('(');
@@ -254,32 +251,50 @@ namespace svg
 
 
 
-    void readSVG(const string& svg_file, Point& dimensions, vector<SVGElement *>& svg_elements)
-    {
-        XMLDocument doc;
-        XMLError r = doc.LoadFile(svg_file.c_str());
-        if (r != XML_SUCCESS)
-        {
-            throw runtime_error("Unable to load " + svg_file);
-        }
-        XMLElement *xml_elem = doc.RootElement();
-
-        dimensions.x = xml_elem->IntAttribute("width");
-        dimensions.y = xml_elem->IntAttribute("height");
-
-        unordered_map<string, SVGElement*> id_map; 
-        
-
-        for (XMLElement *child = xml_elem->FirstChildElement(); child != nullptr; child = child->NextSiblingElement())
-        {
-            readGroup(child, svg_elements, id_map);
-            const char* element_id = child->Attribute("id");
-            if (element_id) {
-                id_map[string(element_id)] = svg_elements.back();
-            }
-            
-        }
+/**
+ * This function reads an SVG file 
+ */
+void readSVG(const string& svg_file, Point& dimensions, vector<SVGElement *>& svg_elements)
+{
+    // Create an XMLDocument object to represent the SVG document
+    XMLDocument doc;
     
+    // Load the SVG file
+    XMLError r = doc.LoadFile(svg_file.c_str());
+    
+    // Check if there was an error loading the file
+    if (r != XML_SUCCESS)
+    {
+        // If there was an error, throw an exception with an error message
+        throw runtime_error("Unable to load " + svg_file);
     }
+
+    // Get the root element of the SVG document
+    XMLElement *xml_elem = doc.RootElement();
+
+    // Read the dimensions of the SVG from the "width" and "height" attributes of the root element
+    dimensions.x = xml_elem->IntAttribute("width");
+    dimensions.y = xml_elem->IntAttribute("height");
+
+    // Create a map to store SVG elements by their IDs
+    unordered_map<string, SVGElement*> id_map; 
+
+    // Iterate over all child elements of the root element
+    for (XMLElement *child = xml_elem->FirstChildElement(); child != nullptr; child = child->NextSiblingElement())
+    {
+        // Read the group of SVG elements (presumably a function you implemented)
+        readGroup(child, svg_elements, id_map);
+        
+        // Get the "id" attribute of the child element
+        const char* element_id = child->Attribute("id");
+        
+        // If the "id" attribute is present
+        if (element_id) {
+            // Add the element to the ID map using the ID as the key and the last element added to the svg_elements list as the value
+            id_map[string(element_id)] = svg_elements.back();
+        }
+    }
+}
+
 
 }
