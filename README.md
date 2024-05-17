@@ -1,18 +1,21 @@
-
 # Programming project
 
 ## Group elements
 
-Identify all group elements (numbers and names).
-
 - up202204802 Maria Vieira
 - up202205028 Marta Cruz
-- upXXXXX Name of element 3
 
 
 ## Accomplished tasks
 
-Brief summary of what you implemented.
+The majority of the tasks were accomplished:
+- SVG geometrical elements;
+- Elements transformation;
+- Groups;
+- Use (partially correct - 2 out of 6 tests passed).
+
+Only the use objects when apllied to groups don´t do what is expected.
+The work was equally distributed by both members of the group.
 
 
 # Projeto_prog
