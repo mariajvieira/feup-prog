@@ -11,9 +11,12 @@ using namespace std;
 namespace svg
 {
     /**
-     * SVGElement Class
-     * This is the superclass of all type of elements.
-    */
+     * @class SVGElement
+     * @brief The base class for all SVG elements.
+     * 
+     * This class serves as the superclass for various SVG elements. 
+     * It provides a common interface for operations like drawing, translating, rotating, and scaling.
+     */
     class SVGElement
     {
 
@@ -35,19 +38,33 @@ namespace svg
     // readSVG -> implement it in readSVG.cpp
     // convert -> already given (DO NOT CHANGE) in convert.cpp
 
+    /**
+     * @brief Reads an SVG file and populates the provided dimensions and elements vector.
+     * @param svg_file The path to the SVG file.
+     * @param dimensions The dimensions of the SVG canvas.
+     * @param svg_elements A vector to store the SVG elements.
+     */
     void readSVG(const std::string &svg_file,
                  Point &dimensions,
                  std::vector<SVGElement *> &svg_elements);
+    
+    /**
+     * @brief Converts an SVG file to a PNG file.
+     * @param svg_file The path to the SVG file.
+     * @param png_file The path to the output PNG file.
+     */
     void convert(const std::string &svg_file,
                  const std::string &png_file);
 
 
 
     /**
-     * Group Class
+     * @class Group
+     * @brief A class representing a group of SVG elements.
      * 
-     * This is the class for the Group Elements.
-    */
+     * This class allows grouping multiple SVG elements together, 
+     * enabling collective transformations and drawing operations.
+     */
     class Group : public SVGElement {
     public:
 
@@ -69,10 +86,9 @@ namespace svg
 
 
     /**
-     * Ellipse Class
-     * 
-     * This is the class for the Ellipse Elements.
-    */
+     * @class Ellipse
+     * @brief A class representing an ellipse element.
+     */
     class Ellipse : public SVGElement
     {
     public:
@@ -92,11 +108,11 @@ namespace svg
 
 
     /**
-     * Ellipse Class
+     * @class Circle
+     * @brief A class representing a circle element.
      * 
-     * This is the class for the Circle Elements.
-     * This class is a subclass of Ellipse. Therefore, it overrides some functions that don't need to be defined
-    */
+     * This class is a specialized version of the Ellipse class.
+     */
     class Circle : public Ellipse
     {
     public:
@@ -105,12 +121,10 @@ namespace svg
         Circle* clone() const override;     //function that creates a copy of the element
     };
 
-
     /**
-     * Polyline Class
-     * 
-     * This is the class for the Polyline Elements.
-    */
+     * @class Polyline
+     * @brief A class representing a polyline element.
+     */
     class Polyline : public SVGElement 
     {
     public:
@@ -129,11 +143,11 @@ namespace svg
 
 
     /**
-     * Line Class
+     * @class Line
+     * @brief A class representing a line element.
      * 
-     * This is the class for the Line Elements.
-     * This class is a subclass of POlyline. Therefore, it overrides some functions that don't need to be defined
-    */
+     * This class is a specialized version of the Polyline class.
+     */
     class Line : public Polyline 
     {
     public:
@@ -144,10 +158,9 @@ namespace svg
 
 
     /**
-     * Polygon Class
-     * 
-     * This is the class for the POlygon Elements.
-    */
+     * @class Polygon
+     * @brief A class representing a polygon element.
+     */
     class Polygon : public SVGElement 
     {
 
@@ -168,11 +181,11 @@ namespace svg
 
 
     /**
-     * Rect Class
+     * @class Rect
+     * @brief A class representing a rectangle element.
      * 
-     * This is the class for the Rect Elements.
-     * This class is a subclass of Polygon. Therefore, it overrides some functions that don't need to be defined
-    */
+     * This class is a specialized version of the Polygon class.
+     */
     class Rect : public Polygon 
     {
     public:
